@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -55,5 +57,16 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'League Spartan', sans-serif;
   }
+}
+
+:root {
+  --logo: #ff4500;
+}
+
+.logo {
+  font-family: 'Great Vibes', serif;
+  font-size: 2.4rem;
+  color: var(--logo);
 }

@@ -7,7 +7,7 @@ export const Route = createFileRoute('/')({
 
 function RouteComponent() {
   return <div>
-    <h1>Grammateion</h1>
+    <h1 className='logo'>Grammateion</h1>
     <hr />
     <p>Expense Management Tracking System</p>
     <Button>Login</Button>

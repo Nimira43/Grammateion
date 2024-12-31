@@ -9,8 +9,6 @@ import type { ReactNode } from 'react'
 import appCss from '../app.css?url'
 // Supports weights 100-900
 import leagueSpartan from '@fontsource-variable/league-spartan?url'
-import greatVibes from '@fontsource/great-vibes?url'
-import frederickaTheGreat from '@fontsource/fredericka-the-great?url'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -34,14 +32,6 @@ export const Route = createRootRoute({
       {
         rel: 'stylesheet', 
         href: leagueSpartan,
-      },
-      {
-        rel: 'stylesheet', 
-        href: greatVibes,
-      },
-      {
-        rel: 'stylesheet', 
-        href: frederickaTheGreat,
       },
     ],
   }),
