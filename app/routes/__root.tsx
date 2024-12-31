@@ -56,9 +56,9 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       </head>
       <body>
         <nav className='bg-[#111] p-4 h-20 text-[#ff4500] flex items-center justify-between'>
-          <Link to='/'>
+          <Link to='/' className='flex gap-1 items-center text-2xl'>
             <BookOpenCheck className='text-[#fffaf0]'/>
-            <h1 className='logo'>Grammateion</h1>
+            <h1 className='logo pl-2'>Grammateion</h1>
           </Link>
         </nav>
         {children}
