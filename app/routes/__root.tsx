@@ -53,6 +53,9 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <Meta />
       </head>
       <body>
+        <nav className=''>
+
+        </nav>
         {children}
         <ScrollRestoration />
         <Scripts />
