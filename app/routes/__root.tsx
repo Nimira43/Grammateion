@@ -1,5 +1,6 @@
 // app/routes/__root.tsx
 import {
+  Link,
   Outlet,
   ScrollRestoration,
   createRootRoute,
@@ -9,6 +10,7 @@ import type { ReactNode } from 'react'
 import appCss from '../app.css?url'
 // Supports weights 100-900
 import leagueSpartan from '@fontsource-variable/league-spartan?url'
+import { BookOpenCheck } from 'lucide-react'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -53,8 +55,11 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <Meta />
       </head>
       <body>
-        <nav className=''>
-
+        <nav className='bg-[#111] p-4 h-20 text-[#ff4500] flex items-center justify-between'>
+          <Link to='/'>
+            <BookOpenCheck className='text-[#fffaf0]'/>
+            <h1 className='logo'>Grammateion</h1>
+          </Link>
         </nav>
         {children}
         <ScrollRestoration />
