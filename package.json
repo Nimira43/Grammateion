@@ -1,26 +1,27 @@
 {
   "name": "grammateion",
   "version": "1.0.0",
-  "description": "Expense tracking application",
   "main": "index.js",
-  "type": "module",
+ "type": "module",
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start"
   },
-  "author": "Nick Rabone",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "@tanstack/react-router": "^1.87.12",
-    "@tanstack/start": "^1.87.12",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "@tanstack/react-router": "^1.92.11",
+    "@tanstack/start": "^1.92.11",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "vinxi": "^0.5.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5.7.2"
   }
