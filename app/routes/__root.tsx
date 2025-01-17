@@ -11,6 +11,7 @@ import appCss from '../app.css?url'
 // Supports weights 100-900
 import leagueSpartan from '@fontsource-variable/league-spartan?url'
 import { BookOpenCheck } from 'lucide-react'
+import { ClerkProvider } from '@clerk/tanstack-start'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -50,21 +51,24 @@ function RootComponent() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html>
-      <head>
-        <Meta />
-      </head>
-      <body>
-        <nav className='bg-[#111] p-4 h-20 text-[#ff4500] flex items-center justify-between'>
-          <Link to='/' className='flex gap-1 items-center text-2xl'>
-            <BookOpenCheck className='text-[#fffaf0]'/>
-            <h1 className='logo pl-2'>Grammateion</h1>
-          </Link>
-        </nav>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html>
+        <head>
+          <Meta />
+        </head>
+        <body>
+          <nav className='bg-[#111] p-4 h-20 text-[#ff4500] flex items-center justify-between'>
+            <Link to='/' className='flex gap-1 items-center text-2xl'>
+              <BookOpenCheck className='text-[#fffaf0]'/>
+              <h1 className='logo pl-2'>Grammateion</h1>
+            </Link>
+          </nav>
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </body>
+      </html>
+    </ClerkProvider>
+    
   )
 }
