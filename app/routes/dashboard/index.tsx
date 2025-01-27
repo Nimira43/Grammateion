@@ -1,6 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/dashboard/')({
+  // beforeLoad: ({context}) => {
+  //   context.userId
+  // },
   component: RouteComponent,
 })
 
