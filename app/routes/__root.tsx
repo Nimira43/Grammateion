@@ -13,8 +13,15 @@ import leagueSpartan from '@fontsource-variable/league-spartan?url'
 import { BookOpenCheck } from 'lucide-react'
 import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/tanstack-start'
 import { Button } from '@/components/ui/button'
+import { getSignedInUserId } from '@/data/getSignedInUserId'
 
 export const Route = createRootRoute({
+  beforeLoad: async () => {
+    const userId = await getSignedInUserId()
+    return {
+      userId,
+    }
+  },
   head: () => ({
     meta: [
       {
@@ -75,7 +82,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
                   <div className='w-[1px] h-8 bg-[#ff4500]' />
                   <Button 
                     asChild variant='link'
-                    className='text-[#fffaf0] uppercase'  
+                    className='text-[#fffaf0] uppercase '  
                   >
                     <SignUpButton />
                   </Button>
