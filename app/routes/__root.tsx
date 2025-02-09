@@ -16,6 +16,9 @@ import { Button } from '@/components/ui/button'
 import { getSignedInUserId } from '@/data/getSignedInUserId'
 
 export const Route = createRootRoute({
+  notFoundComponent() {
+    return <div className='text-3xl text-center py-10 text-'>Sorry. Page Not Found.</div>
+  },
   beforeLoad: async () => {
     const userId = await getSignedInUserId()
     return {
