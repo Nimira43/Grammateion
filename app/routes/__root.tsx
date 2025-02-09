@@ -4,6 +4,7 @@ import {
   Outlet,
   ScrollRestoration,
   createRootRoute,
+  useNavigate,
 } from '@tanstack/react-router'
 import { Meta, Scripts } from '@tanstack/start'
 import type { ReactNode } from 'react'
@@ -61,6 +62,8 @@ function RootComponent() {
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
+  const navigate = useNavigate()
+
   return (
     <ClerkProvider>
       <html>
@@ -98,10 +101,22 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
                     elements: {
                       userButtonOuterIdentifier: {
                         color: '#fffaf0',
-                      }
+                      },
                     }
                   }}  
-                />
+                >
+                  <UserButton.MenuItems>
+                    <UserButton.Action
+                      label='Dashboard'
+                      labelIcon={<BookOpenCheck size={16}/>}
+                      onClick={() => {
+                        navigate({
+                          to: '/dashboard',
+                        })
+                      }}
+                    />
+                  </UserButton.MenuItems>
+                </UserButton>
               </SignedIn>
             </div>
           </nav>

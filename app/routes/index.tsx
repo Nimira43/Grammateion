@@ -10,4 +10,4 @@ function RouteComponent() {
       Home Page
     </div>
   )
-  }
+}
