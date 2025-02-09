@@ -17,7 +17,7 @@ import { getSignedInUserId } from '@/data/getSignedInUserId'
 
 export const Route = createRootRoute({
   notFoundComponent() {
-    return <div className='text-3xl text-center py-10 text-'>Sorry. Page Not Found.</div>
+    return <div className='text-3xl text-center py-10 text-dark'>Sorry. Page Not Found.</div>
   },
   beforeLoad: async () => {
     const userId = await getSignedInUserId()
@@ -68,9 +68,9 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
           <Meta />
         </head>
         <body>
-          <nav className='bg-[#111] p-4 h-20 text-[#ff4500] flex items-center justify-between'>
+          <nav className='bg-dark p-4 h-20 text-main flex items-center justify-between'>
             <Link to='/' className='flex gap-1 items-center text-2xl'>
-              <BookOpenCheck className='text-[#fffaf0]'/>
+              <BookOpenCheck className='text-main '/>
               <h1 className='logo pl-2'>Grammateion</h1>
             </Link>
             <div>
@@ -78,14 +78,14 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
                 <div className=' flex items-center'>
                   <Button 
                     asChild variant='link'
-                    className='text-[#fffaf0] uppercase'  
+                    className='text-light uppercase'  
                   >
                     <SignInButton />
                   </Button>
-                  <div className='w-[1px] h-8 bg-[#ff4500]' />
+                  <div className='w-[1px] h-8 bg-main' />
                   <Button 
                     asChild variant='link'
-                    className='text-[#fffaf0] uppercase '  
+                    className='text-light uppercase '  
                   >
                     <SignUpButton />
                   </Button>
