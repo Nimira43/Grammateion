@@ -13,7 +13,7 @@ function RouteComponent() {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink>
+            <BreadcrumbLink asChild>
               <Link to='/dashboard'>Dashboard</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
