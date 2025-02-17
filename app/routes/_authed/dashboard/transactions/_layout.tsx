@@ -7,5 +7,5 @@ export const Route = createFileRoute('/_authed/dashboard/transactions/_layout')(
 )
 
 function RouteComponent() {
-  return <div>Hello "/_authed/dashboard/transactions/_layout"!</div>
+  return <div>Hello '/_authed/dashboard/transactions/_layout'!</div>
 }

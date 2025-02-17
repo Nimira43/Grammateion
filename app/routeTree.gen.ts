@@ -237,48 +237,48 @@ export const routeTree = rootRoute
 
 /* ROUTE_MANIFEST_START
 {
-  "routes": {
-    "__root__": {
-      "filePath": "__root.tsx",
-      "children": [
-        "/",
-        "/_authed"
+  'routes': {
+    '__root__': {
+      'filePath': '__root.tsx',
+      'children': [
+        '/',
+        '/_authed'
       ]
     },
-    "/": {
-      "filePath": "index.tsx"
+    '/': {
+      'filePath': 'index.tsx'
     },
-    "/_authed": {
-      "filePath": "_authed.tsx",
-      "children": [
-        "/_authed/dashboard/",
-        "/_authed/dashboard/transactions"
+    '/_authed': {
+      'filePath': '_authed.tsx',
+      'children': [
+        '/_authed/dashboard/',
+        '/_authed/dashboard/transactions'
       ]
     },
-    "/_authed/dashboard/": {
-      "filePath": "_authed/dashboard/index.tsx",
-      "parent": "/_authed"
+    '/_authed/dashboard/': {
+      'filePath': '_authed/dashboard/index.tsx',
+      'parent': '/_authed'
     },
-    "/_authed/dashboard/transactions": {
-      "filePath": "_authed/dashboard/transactions",
-      "parent": "/_authed",
-      "children": [
-        "/_authed/dashboard/transactions/_layout",
-        "/_authed/dashboard/transactions/",
-        "/_authed/dashboard/transactions/new/"
+    '/_authed/dashboard/transactions': {
+      'filePath': '_authed/dashboard/transactions',
+      'parent': '/_authed',
+      'children': [
+        '/_authed/dashboard/transactions/_layout',
+        '/_authed/dashboard/transactions/',
+        '/_authed/dashboard/transactions/new/'
       ]
     },
-    "/_authed/dashboard/transactions/_layout": {
-      "filePath": "_authed/dashboard/transactions/_layout.tsx",
-      "parent": "/_authed/dashboard/transactions"
+    '/_authed/dashboard/transactions/_layout': {
+      'filePath': '_authed/dashboard/transactions/_layout.tsx',
+      'parent': '/_authed/dashboard/transactions'
     },
-    "/_authed/dashboard/transactions/": {
-      "filePath": "_authed/dashboard/transactions/index.tsx",
-      "parent": "/_authed/dashboard/transactions"
+    '/_authed/dashboard/transactions/': {
+      'filePath': '_authed/dashboard/transactions/index.tsx',
+      'parent': '/_authed/dashboard/transactions'
     },
-    "/_authed/dashboard/transactions/new/": {
-      "filePath": "_authed/dashboard/transactions/new/index.tsx",
-      "parent": "/_authed/dashboard/transactions"
+    '/_authed/dashboard/transactions/new/': {
+      'filePath': '_authed/dashboard/transactions/new/index.tsx',
+      'parent': '/_authed/dashboard/transactions'
     }
   }
 }
