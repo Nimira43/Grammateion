@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Outlet } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_authed/dashboard/transactions/_layout')(
   {
@@ -7,5 +7,10 @@ export const Route = createFileRoute('/_authed/dashboard/transactions/_layout')(
 )
 
 function RouteComponent() {
-  return <div>Hello '/_authed/dashboard/transactions/_layout'!</div>
+  return (
+    <div>
+      Breadcrumbs
+      <Outlet />
+    </div>
+  )
 }
