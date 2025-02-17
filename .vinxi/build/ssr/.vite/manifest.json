@@ -1,0 +1,108 @@
+{
+  "C:/Users/arimi/Project-8/JavaScript/The-New-52/Tom/Tanstack-Project-Expense-Tracker/Grammateion/app/app.css": {
+    "file": "assets/app-CUk5dS7W.css",
+    "src": "C:/Users/arimi/Project-8/JavaScript/The-New-52/Tom/Tanstack-Project-Expense-Tracker/Grammateion/app/app.css"
+  },
+  "C:/Users/arimi/Project-8/JavaScript/The-New-52/Tom/Tanstack-Project-Expense-Tracker/Grammateion/node_modules/@fontsource-variable/league-spartan/index.css": {
+    "file": "assets/index-BVYm7e4I.css",
+    "src": "C:/Users/arimi/Project-8/JavaScript/The-New-52/Tom/Tanstack-Project-Expense-Tracker/Grammateion/node_modules/@fontsource-variable/league-spartan/index.css"
+  },
+  "_breadcrumb-DZxmAuy3.js": {
+    "file": "assets/breadcrumb-DZxmAuy3.js",
+    "name": "breadcrumb",
+    "imports": [
+      "_ssr-BtccYP7L.js"
+    ]
+  },
+  "_ssr-BtccYP7L.js": {
+    "file": "assets/ssr-BtccYP7L.js",
+    "name": "ssr",
+    "dynamicImports": [
+      "app/routes/_authed.tsx?tsr-split",
+      "app/routes/index.tsx?tsr-split",
+      "app/routes/_authed/dashboard/index.tsx?tsr-split",
+      "app/routes/_authed/dashboard/transactions/_layout.tsx?tsr-split",
+      "app/routes/_authed/dashboard/transactions/_layout.index.tsx?tsr-split",
+      "app/routes/_authed/dashboard/transactions/new/_layout.tsx?tsr-split",
+      "app/routes/_authed/dashboard/transactions/new/_layout.index.tsx?tsr-split"
+    ],
+    "assets": [
+      "assets/league-spartan-vietnamese-wght-normal-JhKllbVb.woff2",
+      "assets/league-spartan-latin-ext-wght-normal-Qnnn6VB4.woff2",
+      "assets/league-spartan-latin-wght-normal-CC-akcPX.woff2",
+      "assets/app-CUk5dS7W.css",
+      "assets/index-BVYm7e4I.css"
+    ]
+  },
+  "app/routes/_authed.tsx?tsr-split": {
+    "file": "assets/_authed-C2Z6N0Kw.js",
+    "name": "_authed",
+    "src": "app/routes/_authed.tsx?tsr-split",
+    "isDynamicEntry": true
+  },
+  "app/routes/_authed/dashboard/index.tsx?tsr-split": {
+    "file": "assets/index-DNqJZGKG.js",
+    "name": "index",
+    "src": "app/routes/_authed/dashboard/index.tsx?tsr-split",
+    "isDynamicEntry": true
+  },
+  "app/routes/_authed/dashboard/transactions/_layout.index.tsx?tsr-split": {
+    "file": "assets/_layout.index-WlXZGX-k.js",
+    "name": "_layout.index",
+    "src": "app/routes/_authed/dashboard/transactions/_layout.index.tsx?tsr-split",
+    "isDynamicEntry": true
+  },
+  "app/routes/_authed/dashboard/transactions/_layout.tsx?tsr-split": {
+    "file": "assets/_layout-B7YqCWjM.js",
+    "name": "_layout",
+    "src": "app/routes/_authed/dashboard/transactions/_layout.tsx?tsr-split",
+    "isDynamicEntry": true,
+    "imports": [
+      "_breadcrumb-DZxmAuy3.js",
+      "_ssr-BtccYP7L.js"
+    ]
+  },
+  "app/routes/_authed/dashboard/transactions/new/_layout.index.tsx?tsr-split": {
+    "file": "assets/_layout.index-B0f4jgm9.js",
+    "name": "_layout.index",
+    "src": "app/routes/_authed/dashboard/transactions/new/_layout.index.tsx?tsr-split",
+    "isDynamicEntry": true
+  },
+  "app/routes/_authed/dashboard/transactions/new/_layout.tsx?tsr-split": {
+    "file": "assets/_layout-B5Y2Qwiw.js",
+    "name": "_layout",
+    "src": "app/routes/_authed/dashboard/transactions/new/_layout.tsx?tsr-split",
+    "isDynamicEntry": true,
+    "imports": [
+      "_breadcrumb-DZxmAuy3.js",
+      "_ssr-BtccYP7L.js"
+    ]
+  },
+  "app/routes/index.tsx?tsr-split": {
+    "file": "assets/index-B5thYFhj.js",
+    "name": "index",
+    "src": "app/routes/index.tsx?tsr-split",
+    "isDynamicEntry": true
+  },
+  "node_modules/@fontsource-variable/league-spartan/files/league-spartan-latin-ext-wght-normal.woff2": {
+    "file": "assets/league-spartan-latin-ext-wght-normal-Qnnn6VB4.woff2",
+    "src": "node_modules/@fontsource-variable/league-spartan/files/league-spartan-latin-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/league-spartan/files/league-spartan-latin-wght-normal.woff2": {
+    "file": "assets/league-spartan-latin-wght-normal-CC-akcPX.woff2",
+    "src": "node_modules/@fontsource-variable/league-spartan/files/league-spartan-latin-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/league-spartan/files/league-spartan-vietnamese-wght-normal.woff2": {
+    "file": "assets/league-spartan-vietnamese-wght-normal-JhKllbVb.woff2",
+    "src": "node_modules/@fontsource-variable/league-spartan/files/league-spartan-vietnamese-wght-normal.woff2"
+  },
+  "virtual:$vinxi/handler/ssr": {
+    "file": "ssr.js",
+    "name": "ssr",
+    "src": "virtual:$vinxi/handler/ssr",
+    "isEntry": true,
+    "imports": [
+      "_ssr-BtccYP7L.js"
+    ]
+  }
+}

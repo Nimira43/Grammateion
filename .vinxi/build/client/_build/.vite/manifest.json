@@ -1,0 +1,123 @@
+{
+  "C:/Users/arimi/Project-8/JavaScript/The-New-52/Tom/Tanstack-Project-Expense-Tracker/Grammateion/app/app.css": {
+    "file": "assets/app-CUk5dS7W.css",
+    "src": "C:/Users/arimi/Project-8/JavaScript/The-New-52/Tom/Tanstack-Project-Expense-Tracker/Grammateion/app/app.css"
+  },
+  "C:/Users/arimi/Project-8/JavaScript/The-New-52/Tom/Tanstack-Project-Expense-Tracker/Grammateion/node_modules/@fontsource-variable/league-spartan/index.css": {
+    "file": "assets/index-BVYm7e4I.css",
+    "src": "C:/Users/arimi/Project-8/JavaScript/The-New-52/Tom/Tanstack-Project-Expense-Tracker/Grammateion/node_modules/@fontsource-variable/league-spartan/index.css"
+  },
+  "_breadcrumb-BsjfQffO.js": {
+    "file": "assets/breadcrumb-BsjfQffO.js",
+    "name": "breadcrumb",
+    "imports": [
+      "_client-QLi1Kmdp.js"
+    ]
+  },
+  "_client-QLi1Kmdp.js": {
+    "file": "assets/client-QLi1Kmdp.js",
+    "name": "client",
+    "dynamicImports": [
+      "app/routes/_authed.tsx?tsr-split",
+      "app/routes/index.tsx?tsr-split",
+      "app/routes/_authed/dashboard/index.tsx?tsr-split",
+      "app/routes/_authed/dashboard/transactions/_layout.tsx?tsr-split",
+      "app/routes/_authed/dashboard/transactions/_layout.index.tsx?tsr-split",
+      "app/routes/_authed/dashboard/transactions/new/_layout.tsx?tsr-split",
+      "app/routes/_authed/dashboard/transactions/new/_layout.index.tsx?tsr-split"
+    ],
+    "assets": [
+      "assets/league-spartan-vietnamese-wght-normal-JhKllbVb.woff2",
+      "assets/league-spartan-latin-ext-wght-normal-Qnnn6VB4.woff2",
+      "assets/league-spartan-latin-wght-normal-CC-akcPX.woff2",
+      "assets/app-CUk5dS7W.css",
+      "assets/index-BVYm7e4I.css"
+    ]
+  },
+  "app/routes/_authed.tsx?tsr-split": {
+    "file": "assets/_authed-5ISWTPO4.js",
+    "name": "_authed",
+    "src": "app/routes/_authed.tsx?tsr-split",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-QLi1Kmdp.js"
+    ]
+  },
+  "app/routes/_authed/dashboard/index.tsx?tsr-split": {
+    "file": "assets/index-DNwmJJmb.js",
+    "name": "index",
+    "src": "app/routes/_authed/dashboard/index.tsx?tsr-split",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-QLi1Kmdp.js"
+    ]
+  },
+  "app/routes/_authed/dashboard/transactions/_layout.index.tsx?tsr-split": {
+    "file": "assets/_layout.index-hXndXyic.js",
+    "name": "_layout.index",
+    "src": "app/routes/_authed/dashboard/transactions/_layout.index.tsx?tsr-split",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-QLi1Kmdp.js"
+    ]
+  },
+  "app/routes/_authed/dashboard/transactions/_layout.tsx?tsr-split": {
+    "file": "assets/_layout-lmCD7EOQ.js",
+    "name": "_layout",
+    "src": "app/routes/_authed/dashboard/transactions/_layout.tsx?tsr-split",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-QLi1Kmdp.js",
+      "_breadcrumb-BsjfQffO.js"
+    ]
+  },
+  "app/routes/_authed/dashboard/transactions/new/_layout.index.tsx?tsr-split": {
+    "file": "assets/_layout.index-BgX1EfD2.js",
+    "name": "_layout.index",
+    "src": "app/routes/_authed/dashboard/transactions/new/_layout.index.tsx?tsr-split",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-QLi1Kmdp.js"
+    ]
+  },
+  "app/routes/_authed/dashboard/transactions/new/_layout.tsx?tsr-split": {
+    "file": "assets/_layout-Ma7EtJGt.js",
+    "name": "_layout",
+    "src": "app/routes/_authed/dashboard/transactions/new/_layout.tsx?tsr-split",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-QLi1Kmdp.js",
+      "_breadcrumb-BsjfQffO.js"
+    ]
+  },
+  "app/routes/index.tsx?tsr-split": {
+    "file": "assets/index-COiPT6Lg.js",
+    "name": "index",
+    "src": "app/routes/index.tsx?tsr-split",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-QLi1Kmdp.js"
+    ]
+  },
+  "node_modules/@fontsource-variable/league-spartan/files/league-spartan-latin-ext-wght-normal.woff2": {
+    "file": "assets/league-spartan-latin-ext-wght-normal-Qnnn6VB4.woff2",
+    "src": "node_modules/@fontsource-variable/league-spartan/files/league-spartan-latin-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/league-spartan/files/league-spartan-latin-wght-normal.woff2": {
+    "file": "assets/league-spartan-latin-wght-normal-CC-akcPX.woff2",
+    "src": "node_modules/@fontsource-variable/league-spartan/files/league-spartan-latin-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/league-spartan/files/league-spartan-vietnamese-wght-normal.woff2": {
+    "file": "assets/league-spartan-vietnamese-wght-normal-JhKllbVb.woff2",
+    "src": "node_modules/@fontsource-variable/league-spartan/files/league-spartan-vietnamese-wght-normal.woff2"
+  },
+  "virtual:$vinxi/handler/client": {
+    "file": "assets/client-CG4WjYZy.js",
+    "name": "client",
+    "src": "virtual:$vinxi/handler/client",
+    "isEntry": true,
+    "imports": [
+      "_client-QLi1Kmdp.js"
+    ]
+  }
+}
