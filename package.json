@@ -15,7 +15,7 @@
   "dependencies": {
     "@clerk/tanstack-start": "^0.4.0",
     "@fontsource-variable/league-spartan": "^5.1.1",
-    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-slot": "^1.1.2",
     "@tanstack/react-router": "^1.92.11",
     "@tanstack/start": "^1.92.11",
     "class-variance-authority": "^0.7.1",
