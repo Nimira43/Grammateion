@@ -8,6 +8,8 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import { createFileRoute } from '@tanstack/react-router'
+
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
@@ -15,7 +17,14 @@ import { Route as AuthedImport } from './routes/_authed'
 import { Route as IndexImport } from './routes/index'
 import { Route as AuthedDashboardIndexImport } from './routes/_authed/dashboard/index'
 import { Route as AuthedDashboardTransactionsIndexImport } from './routes/_authed/dashboard/transactions/index'
+import { Route as AuthedDashboardTransactionsLayoutImport } from './routes/_authed/dashboard/transactions/_layout'
 import { Route as AuthedDashboardTransactionsNewIndexImport } from './routes/_authed/dashboard/transactions/new/index'
+
+// Create Virtual Routes
+
+const AuthedDashboardTransactionsImport = createFileRoute(
+  '/_authed/dashboard/transactions',
+)()
 
 // Create/Update Routes
 
@@ -30,6 +39,13 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const AuthedDashboardTransactionsRoute =
+  AuthedDashboardTransactionsImport.update({
+    id: '/dashboard/transactions',
+    path: '/dashboard/transactions',
+    getParentRoute: () => AuthedRoute,
+  } as any)
+
 const AuthedDashboardIndexRoute = AuthedDashboardIndexImport.update({
   id: '/dashboard/',
   path: '/dashboard/',
@@ -38,16 +54,22 @@ const AuthedDashboardIndexRoute = AuthedDashboardIndexImport.update({
 
 const AuthedDashboardTransactionsIndexRoute =
   AuthedDashboardTransactionsIndexImport.update({
-    id: '/dashboard/transactions/',
-    path: '/dashboard/transactions/',
-    getParentRoute: () => AuthedRoute,
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthedDashboardTransactionsRoute,
+  } as any)
+
+const AuthedDashboardTransactionsLayoutRoute =
+  AuthedDashboardTransactionsLayoutImport.update({
+    id: '/_layout',
+    getParentRoute: () => AuthedDashboardTransactionsRoute,
   } as any)
 
 const AuthedDashboardTransactionsNewIndexRoute =
   AuthedDashboardTransactionsNewIndexImport.update({
-    id: '/dashboard/transactions/new/',
-    path: '/dashboard/transactions/new/',
-    getParentRoute: () => AuthedRoute,
+    id: '/new/',
+    path: '/new/',
+    getParentRoute: () => AuthedDashboardTransactionsRoute,
   } as any)
 
 // Populate the FileRoutesByPath interface
@@ -75,36 +97,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthedDashboardIndexImport
       parentRoute: typeof AuthedImport
     }
-    '/_authed/dashboard/transactions/': {
-      id: '/_authed/dashboard/transactions/'
+    '/_authed/dashboard/transactions': {
+      id: '/_authed/dashboard/transactions'
       path: '/dashboard/transactions'
       fullPath: '/dashboard/transactions'
-      preLoaderRoute: typeof AuthedDashboardTransactionsIndexImport
+      preLoaderRoute: typeof AuthedDashboardTransactionsImport
       parentRoute: typeof AuthedImport
+    }
+    '/_authed/dashboard/transactions/_layout': {
+      id: '/_authed/dashboard/transactions/_layout'
+      path: '/dashboard/transactions'
+      fullPath: '/dashboard/transactions'
+      preLoaderRoute: typeof AuthedDashboardTransactionsLayoutImport
+      parentRoute: typeof AuthedDashboardTransactionsRoute
+    }
+    '/_authed/dashboard/transactions/': {
+      id: '/_authed/dashboard/transactions/'
+      path: '/'
+      fullPath: '/dashboard/transactions/'
+      preLoaderRoute: typeof AuthedDashboardTransactionsIndexImport
+      parentRoute: typeof AuthedDashboardTransactionsImport
     }
     '/_authed/dashboard/transactions/new/': {
       id: '/_authed/dashboard/transactions/new/'
-      path: '/dashboard/transactions/new'
+      path: '/new'
       fullPath: '/dashboard/transactions/new'
       preLoaderRoute: typeof AuthedDashboardTransactionsNewIndexImport
-      parentRoute: typeof AuthedImport
+      parentRoute: typeof AuthedDashboardTransactionsImport
     }
   }
 }
 
 // Create and export the route tree
 
-interface AuthedRouteChildren {
-  AuthedDashboardIndexRoute: typeof AuthedDashboardIndexRoute
+interface AuthedDashboardTransactionsRouteChildren {
+  AuthedDashboardTransactionsLayoutRoute: typeof AuthedDashboardTransactionsLayoutRoute
   AuthedDashboardTransactionsIndexRoute: typeof AuthedDashboardTransactionsIndexRoute
   AuthedDashboardTransactionsNewIndexRoute: typeof AuthedDashboardTransactionsNewIndexRoute
 }
 
+const AuthedDashboardTransactionsRouteChildren: AuthedDashboardTransactionsRouteChildren =
+  {
+    AuthedDashboardTransactionsLayoutRoute:
+      AuthedDashboardTransactionsLayoutRoute,
+    AuthedDashboardTransactionsIndexRoute:
+      AuthedDashboardTransactionsIndexRoute,
+    AuthedDashboardTransactionsNewIndexRoute:
+      AuthedDashboardTransactionsNewIndexRoute,
+  }
+
+const AuthedDashboardTransactionsRouteWithChildren =
+  AuthedDashboardTransactionsRoute._addFileChildren(
+    AuthedDashboardTransactionsRouteChildren,
+  )
+
+interface AuthedRouteChildren {
+  AuthedDashboardIndexRoute: typeof AuthedDashboardIndexRoute
+  AuthedDashboardTransactionsRoute: typeof AuthedDashboardTransactionsRouteWithChildren
+}
+
 const AuthedRouteChildren: AuthedRouteChildren = {
   AuthedDashboardIndexRoute: AuthedDashboardIndexRoute,
-  AuthedDashboardTransactionsIndexRoute: AuthedDashboardTransactionsIndexRoute,
-  AuthedDashboardTransactionsNewIndexRoute:
-    AuthedDashboardTransactionsNewIndexRoute,
+  AuthedDashboardTransactionsRoute:
+    AuthedDashboardTransactionsRouteWithChildren,
 }
 
 const AuthedRouteWithChildren =
@@ -114,7 +169,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '': typeof AuthedRouteWithChildren
   '/dashboard': typeof AuthedDashboardIndexRoute
-  '/dashboard/transactions': typeof AuthedDashboardTransactionsIndexRoute
+  '/dashboard/transactions': typeof AuthedDashboardTransactionsLayoutRoute
+  '/dashboard/transactions/': typeof AuthedDashboardTransactionsIndexRoute
   '/dashboard/transactions/new': typeof AuthedDashboardTransactionsNewIndexRoute
 }
 
@@ -131,6 +187,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authed': typeof AuthedRouteWithChildren
   '/_authed/dashboard/': typeof AuthedDashboardIndexRoute
+  '/_authed/dashboard/transactions': typeof AuthedDashboardTransactionsRouteWithChildren
+  '/_authed/dashboard/transactions/_layout': typeof AuthedDashboardTransactionsLayoutRoute
   '/_authed/dashboard/transactions/': typeof AuthedDashboardTransactionsIndexRoute
   '/_authed/dashboard/transactions/new/': typeof AuthedDashboardTransactionsNewIndexRoute
 }
@@ -142,6 +200,7 @@ export interface FileRouteTypes {
     | ''
     | '/dashboard'
     | '/dashboard/transactions'
+    | '/dashboard/transactions/'
     | '/dashboard/transactions/new'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -155,6 +214,8 @@ export interface FileRouteTypes {
     | '/'
     | '/_authed'
     | '/_authed/dashboard/'
+    | '/_authed/dashboard/transactions'
+    | '/_authed/dashboard/transactions/_layout'
     | '/_authed/dashboard/transactions/'
     | '/_authed/dashboard/transactions/new/'
   fileRoutesById: FileRoutesById
@@ -191,21 +252,33 @@ export const routeTree = rootRoute
       "filePath": "_authed.tsx",
       "children": [
         "/_authed/dashboard/",
-        "/_authed/dashboard/transactions/",
-        "/_authed/dashboard/transactions/new/"
+        "/_authed/dashboard/transactions"
       ]
     },
     "/_authed/dashboard/": {
       "filePath": "_authed/dashboard/index.tsx",
       "parent": "/_authed"
     },
+    "/_authed/dashboard/transactions": {
+      "filePath": "_authed/dashboard/transactions",
+      "parent": "/_authed",
+      "children": [
+        "/_authed/dashboard/transactions/_layout",
+        "/_authed/dashboard/transactions/",
+        "/_authed/dashboard/transactions/new/"
+      ]
+    },
+    "/_authed/dashboard/transactions/_layout": {
+      "filePath": "_authed/dashboard/transactions/_layout.tsx",
+      "parent": "/_authed/dashboard/transactions"
+    },
     "/_authed/dashboard/transactions/": {
       "filePath": "_authed/dashboard/transactions/index.tsx",
-      "parent": "/_authed"
+      "parent": "/_authed/dashboard/transactions"
     },
     "/_authed/dashboard/transactions/new/": {
       "filePath": "_authed/dashboard/transactions/new/index.tsx",
-      "parent": "/_authed"
+      "parent": "/_authed/dashboard/transactions"
     }
   }
 }
