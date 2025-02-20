@@ -20,7 +20,7 @@ export function TransactionForm() {
       amount: 0,
       categoryId: 0,
       description: '',
-      transactionDate: newDate(),
+      transactionDate: new Date(),
     }
   })
 
