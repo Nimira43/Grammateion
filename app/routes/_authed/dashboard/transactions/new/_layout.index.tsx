@@ -12,7 +12,7 @@ function RouteComponent() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>New Transaction</CardTitle>
+        <CardTitle >New Transaction</CardTitle>
       </CardHeader>
       <CardContent>
         <TransactionForm />
