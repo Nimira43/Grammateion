@@ -19,7 +19,7 @@ export function TransactionForm() {
   return (
     <Form {...form}>
       <form>
-        <fieldset className='grid grid-cols-2'>
+        <fieldset className='grid grid-cols-2 gap-y-5 gap-x-2'>
 
         </fieldset>
       </form>  
