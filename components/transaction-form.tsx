@@ -1,3 +1,4 @@
+import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 const transactionFormSchema = z.object({
@@ -9,6 +10,8 @@ const transactionFormSchema = z.object({
 })
 
 export function TransactionForm() {
+  const form = useForm<z.infer<typeof transactionFormSchema>>()
+
   return (
     <div>
       Transaction Form
