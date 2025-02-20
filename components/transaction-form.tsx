@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Form } from './ui/form'
 
 const transactionFormSchema = z.object({
   transactionType: z.enum(['income', 'expense']),
@@ -16,8 +17,12 @@ export function TransactionForm() {
   })
 
   return (
-    <div>
-      Transaction Form
-    </div>
+    <Form {...form}>
+      <form>
+        <fieldset className='grid grid-cols-2'>
+
+        </fieldset>
+      </form>  
+    </Form>
   )
 }
