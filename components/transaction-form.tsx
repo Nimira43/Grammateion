@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const transactionFormSchema = z.object({
   transactionType: z.enum(['income', 'expense']),
@@ -10,7 +11,9 @@ const transactionFormSchema = z.object({
 })
 
 export function TransactionForm() {
-  const form = useForm<z.infer<typeof transactionFormSchema>>()
+  const form = useForm<z.infer<typeof transactionFormSchema>>({
+    resolver: zodResolver(transactionFormSchema)
+  })
 
   return (
     <div>
