@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Form, FormControl, FormField, FormItem } from './ui/form'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 
 const transactionFormSchema = z.object({
@@ -26,6 +26,7 @@ export function TransactionForm() {
             render={({ field }) => {
               return (
                 <FormItem>
+                  <FormLabel>Transaction Type</FormLabel>
                   <FormControl>
                     <Select
                       value={field.value} onValueChange={field.onChange}
@@ -38,6 +39,7 @@ export function TransactionForm() {
                       </SelectContent>
                     </Select>
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )
             }}
