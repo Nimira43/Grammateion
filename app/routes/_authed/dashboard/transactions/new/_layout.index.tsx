@@ -1,3 +1,4 @@
+import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute(
@@ -7,5 +8,11 @@ export const Route = createFileRoute(
 })
 
 function RouteComponent() {
-  return <div>Hello '/_authed/dashboard/transactions/new/'!</div>
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>New Transaction</CardTitle>
+      </CardHeader>
+    </Card>
+  )
 }
