@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute(
@@ -13,6 +13,9 @@ function RouteComponent() {
       <CardHeader>
         <CardTitle>New Transaction</CardTitle>
       </CardHeader>
+      <CardContent>
+        
+      </CardContent>
     </Card>
   )
 }
