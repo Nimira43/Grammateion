@@ -14,7 +14,14 @@ const transactionFormSchema = z.object({
 
 export function TransactionForm() {
   const form = useForm<z.infer<typeof transactionFormSchema>>({
-    resolver: zodResolver(transactionFormSchema)
+    resolver: zodResolver(transactionFormSchema),
+    defaultValues: {
+      transactionType: 'income',
+      amount: 0,
+      categoryId: 0,
+      description: '',
+      transactionDate: newDate(),
+    }
   })
 
   return (
