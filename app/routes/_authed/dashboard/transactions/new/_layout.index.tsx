@@ -12,7 +12,7 @@ function RouteComponent() {
   return (
     <Card className='max-w-screen-md mt-4'>
       <CardHeader>
-        <CardTitle >New Transaction</CardTitle>
+        <CardTitle>New Transaction</CardTitle>
       </CardHeader>
       <CardContent>
         <TransactionForm />
