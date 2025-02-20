@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormField, FormItem } from './ui/form'
-import { Select } from './ui/select'
+import { Select, SelectTrigger, SelectValue } from './ui/select'
 
 const transactionFormSchema = z.object({
   transactionType: z.enum(['income', 'expense']),
@@ -30,7 +30,10 @@ export function TransactionForm() {
                     <Select
                       value={field.value} onValueChange={field.onChange}
                     >
-
+                      <SelectTrigger>
+                        <SelectValue placeholder='Transaction Type'/>
+                      </SelectTrigger>
+                      
                     </Select>
                   </FormControl>
                 </FormItem>
