@@ -10,7 +10,7 @@ export const Route = createFileRoute(
 
 function RouteComponent() {
   return (
-    <Card>
+    <Card className='max-w-screen-md mt-4'>
       <CardHeader>
         <CardTitle >New Transaction</CardTitle>
       </CardHeader>
