@@ -29,7 +29,8 @@ export function TransactionForm() {
       <form>
         <fieldset className='grid grid-cols-2 gap-y-5 gap-x-2'>
           <FormField
-            control={form.control} name='transactionType'
+            control={form.control}
+            name='transactionType'
             render={({ field }) => {
               return (
                 <FormItem>
@@ -52,20 +53,21 @@ export function TransactionForm() {
             }}
           />
           <FormField
-            control={form.control} name='transactionType'
+            control={form.control}
+            name='categoryId'
             render={({ field }) => {
               return (
                 <FormItem>
-                  <FormLabel>Transaction Type</FormLabel>
+                  <FormLabel>Category</FormLabel>
                   <FormControl>
                     <Select
-                      value={field.value} onValueChange={field.onChange}
+                      value={field.value.toString()} onValueChange={field.onChange}
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder='Transaction Type'/>
+                        <SelectValue placeholder='Category'/>
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value='income'>Income</SelectItem>                   <SelectItem value='expense'>Expense</SelectItem>    
+                        <h4>Select Items Placeholder</h4>   
                       </SelectContent>
                     </Select>
                   </FormControl>
