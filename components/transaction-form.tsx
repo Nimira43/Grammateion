@@ -6,6 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Popover, PopoverTrigger } from './ui/popover'
 import { Button } from './ui/button'
 import { cn } from '@/lib/utils'
+import { CalendarIcon } from 'lucide-react'
+import { format } from 'date-fns'
 
 const transactionFormSchema = z.object({
   transactionType: z.enum(['income', 'expense']),
@@ -96,7 +98,12 @@ export function TransactionForm() {
                             !date && 'text-muted-foreground'
                           )}
                         >
-
+                          <CalendarIcon className='mr-2 h-4 w-4' />
+                          {date ? (
+                            format(date, 'PPP')
+                          ) : (
+                            <span>Pick Date</span>
+                          )}
                         </Button>
                       </PopoverTrigger>
                     </Popover>
