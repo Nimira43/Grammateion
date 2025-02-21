@@ -8,6 +8,7 @@ import { Button } from './ui/button'
 import { cn } from '@/lib/utils'
 import { CalendarIcon } from 'lucide-react'
 import { format } from 'date-fns'
+import { enGB } from 'date-fns/locale'
 import { Calendar } from './ui/calendar'
 
 const transactionFormSchema = z.object({
@@ -101,7 +102,7 @@ export function TransactionForm() {
                         >
                           <CalendarIcon className='mr-2 h-4 w-4' />
                           {field.value ? (
-                            format(field.value, 'PPP')
+                            format(field.value, 'do MMMM yyyy', { locale: enGB })
                           ) : (
                             <span>Pick Date</span>
                           )}
