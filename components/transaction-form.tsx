@@ -114,6 +114,9 @@ export function TransactionForm() {
                           selected={field.value}
                           onSelect={field.onChange}
                           initialFocus
+                          disabled={{
+                            after: new Date(),
+                          }}
                         />
                       </PopoverContent>
                     </Popover>
