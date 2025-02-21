@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
+import { Popover, PopoverTrigger } from './ui/popover'
 
 const transactionFormSchema = z.object({
   transactionType: z.enum(['income', 'expense']),
@@ -84,7 +85,11 @@ export function TransactionForm() {
                 <FormItem>
                   <FormLabel>Transaction Date</FormLabel>
                   <FormControl>
-                    
+                    <Popover>
+                      <PopoverTrigger asChild> 
+                        
+                      </PopoverTrigger>
+                    </Popover>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
