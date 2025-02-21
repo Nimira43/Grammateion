@@ -96,7 +96,7 @@ export function TransactionForm() {
                         <Button
                           variant={'outline'}
                           className={cn(
-                            'w-280px justify-center text-left font-normal',
+                            'w-[280px] justify-center text-left font-normal',
                             !field.value && 'text-muted-foreground'
                           )}
                         >
