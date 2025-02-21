@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
+import { date, z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
@@ -92,7 +92,8 @@ export function TransactionForm() {
                         <Button
                           variant={'outline'}
                           className={cn(
-                            'w-280px justify-center text-left font-normal' 
+                            'w-280px justify-center text-left font-normal',
+                            !date && 'text-muted-foreground'
                           )}
                         >
 
