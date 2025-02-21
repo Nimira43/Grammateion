@@ -4,6 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import { Popover, PopoverTrigger } from './ui/popover'
+import { Button } from './ui/button'
+import { cn } from '@/lib/utils'
 
 const transactionFormSchema = z.object({
   transactionType: z.enum(['income', 'expense']),
@@ -87,7 +89,14 @@ export function TransactionForm() {
                   <FormControl>
                     <Popover>
                       <PopoverTrigger asChild> 
-                        
+                        <Button
+                          variant={'outline'}
+                          className={cn(
+                            'w-280px justify-center text-left font-normal' 
+                          )}
+                        >
+
+                        </Button>
                       </PopoverTrigger>
                     </Popover>
                   </FormControl>
