@@ -148,7 +148,24 @@ export function TransactionForm() {
           />
         </fieldset>
         <fieldset>
-          
+          <FormField
+            control={form.control}
+            name='description'
+            render={({ field }) => {
+              return (
+                <FormItem>
+                  <FormLabel>Description</FormLabel>
+                  <FormControl>
+                    <Input {...field} /> 
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )
+            }}
+          />
+          <Button type='submit'>
+            {form.formState.isSubmitting ? 'Submitting...' : 'Submit'}
+          </Button>
         </fieldset>
       </form>  
     </Form>
