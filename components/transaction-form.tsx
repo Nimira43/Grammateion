@@ -32,9 +32,13 @@ export function TransactionForm() {
     }
   })
 
+  const handleSubmit = (data: z.infer<typeof transactionFormSchema>) => {
+    console.log({data})
+  }
+
   return (
     <Form {...form}>
-      <form>
+      <form onSubmit={form.handleSubmit(handleSubmit)}>
         <fieldset
           disabled={form.formState.isSubmitting}
           className='grid grid-cols-2 gap-y-5 gap-x-2'
