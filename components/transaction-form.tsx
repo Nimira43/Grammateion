@@ -10,6 +10,7 @@ import { CalendarIcon } from 'lucide-react'
 import { format } from 'date-fns'
 import { enGB } from 'date-fns/locale'
 import { Calendar } from './ui/calendar'
+import { Input } from './ui/input'
 
 const transactionFormSchema = z.object({
   transactionType: z.enum(['income', 'expense']),
@@ -134,7 +135,11 @@ export function TransactionForm() {
                 <FormItem>
                   <FormLabel>Amount</FormLabel>
                   <FormControl>
-                    
+                    <Input
+                      {...field}
+                      type='number'
+                      step={0.01}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
