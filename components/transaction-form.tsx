@@ -35,7 +35,10 @@ export function TransactionForm() {
   return (
     <Form {...form}>
       <form>
-        <fieldset className='grid grid-cols-2 gap-y-5 gap-x-2'>
+        <fieldset
+          disabled={form.formState.isSubmitting}
+          className='grid grid-cols-2 gap-y-5 gap-x-2'
+        >
           <FormField
             control={form.control}
             name='transactionType'
@@ -147,7 +150,7 @@ export function TransactionForm() {
             }}
           />
         </fieldset>
-        <fieldset>
+        <fieldset disabled={form.formState.isSubmitting}>
           <FormField
             control={form.control}
             name='description'
