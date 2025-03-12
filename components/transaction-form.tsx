@@ -150,7 +150,10 @@ export function TransactionForm() {
             }}
           />
         </fieldset>
-        <fieldset disabled={form.formState.isSubmitting}>
+        <fieldset
+          disabled={form.formState.isSubmitting}
+          className='mt-5 flex flex-col gap-5'
+        >
           <FormField
             control={form.control}
             name='description'
