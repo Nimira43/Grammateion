@@ -126,6 +126,21 @@ export function TransactionForm() {
               )
             }}
           />
+          <FormField
+            control={form.control}
+            name='amount'
+            render={({ field }) => {
+              return (
+                <FormItem>
+                  <FormLabel>Amount</FormLabel>
+                  <FormControl>
+                    
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )
+            }}
+          />
         </fieldset>
       </form>  
     </Form>
