@@ -43,7 +43,9 @@
     "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
+    "drizzle-kit": "^0.30.6",
     "postcss": "^8.4.49",
+    "tsx": "^4.19.3",
     "typescript": "^5.7.2",
     "vite-tsconfig-paths": "^5.1.4"
   }
