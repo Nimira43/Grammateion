@@ -5,5 +5,5 @@ export const categoriesTable = pgTable('categories', {
   name: text().notNull(),
   type: text({
     enum: ['income', 'expense']
-  })
+  }).notNull()
 })
