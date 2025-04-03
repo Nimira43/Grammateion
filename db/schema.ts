@@ -1,4 +1,4 @@
-import { integer, pgTable, text } from 'drizzle-orm/pg-core'
+import { date, integer, numeric, pgTable, text } from 'drizzle-orm/pg-core'
 
 export const categoriesTable = pgTable('categories', {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
@@ -7,3 +7,12 @@ export const categoriesTable = pgTable('categories', {
     enum: ['income', 'expense']
   }).notNull()
 })
+
+export const transactionsTable = pgTable('transaction', {
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  userId: text('user_id').notNull(),
+  description: text().notNull(),
+  amount: numeric().notNull(),
+  transactionDate: date('transaction_date').notNull(),
+  categoryId: integer('category_id').references(() => categoriesTable.id).notNull(),
+} )
