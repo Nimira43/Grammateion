@@ -1,3 +1,6 @@
+import { db } from '.'
+import { categoriesTable } from './schema'
+
 const categoriesSeedData: (typeof categoriesTable.$inferInsert)[] = [
   {
     name: "Salary",
@@ -44,3 +47,7 @@ const categoriesSeedData: (typeof categoriesTable.$inferInsert)[] = [
     type: "expense",
   },
 ]
+
+async function main() {
+  await db.insert(categoriesTable).values(categoriesSeedData)
+}
