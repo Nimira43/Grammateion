@@ -51,3 +51,5 @@ const categoriesSeedData: (typeof categoriesTable.$inferInsert)[] = [
 async function main() {
   await db.insert(categoriesTable).values(categoriesSeedData)
 }
+
+main()
