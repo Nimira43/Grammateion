@@ -41,6 +41,8 @@ export function TransactionForm({
     console.log({data})
   }
 
+  const filteredCategories = categories.filter(cat => cat.type === form.getValues('transactionType'))
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
@@ -87,7 +89,14 @@ export function TransactionForm({
                         <SelectValue placeholder='Category'/>
                       </SelectTrigger>
                       <SelectContent>
-                        <h4>Select Items Placeholder</h4>   
+                        {filteredCategories.map(category => (
+                          <SelectItem
+                            key={category.id}
+                            value={category.id.toString()}
+                          >
+                            {category.name}
+                          </SelectItem>
+                        ))}   
                       </SelectContent>
                     </Select>
                   </FormControl>
