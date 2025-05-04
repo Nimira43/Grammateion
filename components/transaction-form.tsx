@@ -11,6 +11,7 @@ import { format } from 'date-fns'
 import { enGB } from 'date-fns/locale'
 import { Calendar } from './ui/calendar'
 import { Input } from './ui/input'
+import { categoriesTable } from '@/db/schema'
 
 const transactionFormSchema = z.object({
   transactionType: z.enum(['income', 'expense']),
@@ -20,7 +21,11 @@ const transactionFormSchema = z.object({
   description: z.string().min(5, 'Description must contain at least 5 characters.').max(300, 'Description must not exceed 300 characters.')
 })
 
-export function TransactionForm() {
+export function TransactionForm({
+  categories,
+}: {
+    categories: (typeof categoriesTable.$inferSelect) []
+}) {
   const form = useForm<z.infer<typeof transactionFormSchema>>({
     resolver: zodResolver(transactionFormSchema),
     defaultValues: {
