@@ -20,7 +20,7 @@ function RouteComponent() {
   const { categories } = Route.useLoaderData()
 
   const handleSubmit = async (data: z.infer<typeof transactionFormSchema>) => {
-
+    console.log('Handle Submit: ', { data })
   }
 
   return (
