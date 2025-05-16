@@ -5,4 +5,9 @@ import { getWebRequest } from 'vinxi/http'
 const authMiddleware = createMiddleware().server(async ({ next }) => {
   const user = await getAuth(getWebRequest())
 
+  if (!user?.userId) {
+    throw new Error('Unauthorised')
+  }
+
+  const result = await next()
 })
