@@ -19,7 +19,7 @@ export const Route = createFileRoute(
 function RouteComponent() {
   const { categories } = Route.useLoaderData()
 
-  const handleSubmit = async (data: z) => {
+  const handleSubmit = async (data: z.infer<typeof transactionFormSchema>) => {
 
   }
 
