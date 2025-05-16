@@ -1,4 +1,4 @@
-import { TransactionForm } from '@/components/transaction-form'
+import { TransactionForm, transactionFormSchema } from '@/components/transaction-form'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
 import { createFileRoute } from '@tanstack/react-router'
