@@ -5,9 +5,9 @@ const transactionSchema = z.object({
   categoryId: z.coerce
     .number()
     .positive('Please select a category.'),
-  transactionDate: z
-    .date()
-    .max(addDays(new Date(), 1), 'Transaction date cannot be a future date.'),
+  transactionDate: z.string().refine((value) => {
+    
+  }),
   amount: z.coerce
     .number()
     .positive('Amount must be a positive number.'),
