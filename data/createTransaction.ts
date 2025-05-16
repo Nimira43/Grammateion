@@ -1,4 +1,6 @@
 import authMiddleware from '@/authMiddleware'
+import { db } from '@/db'
+import { transactionsTable } from '@/db/schema'
 import { createServerFn } from '@tanstack/start'
 import { addDays } from 'date-fns'
 import { z } from 'zod'
@@ -27,6 +29,14 @@ export const createTransaction = createServerFn({
   .validator((data: z.infer<typeof transactionSchema>) =>
     transactionSchema.parse(data)
   )
-  .handler(async ({ data }) => {
-    
-})
+  .handler(async ({ data, context }) => {
+    const userId = context.userId
+    const transaction = await db.insert(transactionsTable).values({
+      userId,
+      amount: data.amount.toString(),
+      description: data.description,
+      categoryId: data.categoryId,
+      transactionDate: data.transactionDate
+    }).returning()
+    return transaction
+  })
