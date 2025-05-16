@@ -1,4 +1,5 @@
 import { createServerFn } from '@tanstack/start'
+import { addDays } from 'date-fns'
 import { z } from 'zod'
 
 const transactionSchema = z.object({
@@ -6,7 +7,8 @@ const transactionSchema = z.object({
     .number()
     .positive('Please select a category.'),
   transactionDate: z.string().refine((value) => {
-    
+    const parsedDate = new Date(value)
+    return !isNaN(parsedDate.getTime()) && parsedDate <= addDays(new Date(), 1)
   }),
   amount: z.coerce
     .number()
@@ -20,5 +22,5 @@ const transactionSchema = z.object({
 export const createTransaction = createServerFn({
   method: 'POST'
 }).validator(() => {
-
+  
 })
