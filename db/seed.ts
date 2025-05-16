@@ -6,7 +6,6 @@ dotenv.config()
 
 const db = drizzle(process.env.DATABASE_URL!)
 
-
 const categoriesSeedData: (typeof categoriesTable.$inferInsert)[] = [
   {
     name: "Salary",
