@@ -9,5 +9,12 @@ const authMiddleware = createMiddleware().server(async ({ next }) => {
     throw new Error('Unauthorised')
   }
 
-  const result = await next()
+  const result = await next({
+    context: {
+      userId: user.userId,
+    }
+  })
+  return result
 })
+
+export default authMiddleware
