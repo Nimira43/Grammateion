@@ -49,10 +49,6 @@ export function TransactionForm({
     }
   })
 
-  const handleSubmit = (data: z.infer<typeof transactionFormSchema>) => {
-    console.log({data})
-  }
-
   const filteredCategories = categories.filter(cat => cat.type === form.getValues('transactionType'))
 
   return (
