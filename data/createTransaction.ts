@@ -2,8 +2,6 @@ import { createServerFn } from '@tanstack/start'
 import { z } from 'zod'
 
 const transactionSchema = z.object({
-  transactionType: z
-    .enum(['income', 'expense']),
   categoryId: z.coerce
     .number()
     .positive('Please select a category.'),
