@@ -7,7 +7,7 @@ import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
 import { Button } from './ui/button'
 import { cn } from '@/lib/utils'
 import { CalendarIcon } from 'lucide-react'
-import { format } from 'date-fns'
+import { addDays, format } from 'date-fns'
 import { enGB } from 'date-fns/locale'
 import { Calendar } from './ui/calendar'
 import { Input } from './ui/input'
@@ -21,7 +21,7 @@ export const transactionFormSchema = z.object({
     .positive('Please select a category.'),
   transactionDate: z
     .date()
-    .max(new Date(), 'Transaction date cannot be a future date.'),
+    .max(addDays(new Date(), 1), 'Transaction date cannot be a future date.'),
   amount: z.coerce
     .number()
     .positive('Amount must be a positive number.'),
