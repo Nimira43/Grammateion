@@ -21,6 +21,10 @@ const transactionSchema = z.object({
 
 export const createTransaction = createServerFn({
   method: 'POST'
-}).validator((data: z.infer<typeof transactionSchema>) => {
-  transactionSchema.parse(data)
-}).handler(() => {})
+})
+  .validator((data: z.infer<typeof transactionSchema>) =>
+    transactionSchema.parse(data)
+  )
+  .handler(async ({ data }) => {
+    
+})
