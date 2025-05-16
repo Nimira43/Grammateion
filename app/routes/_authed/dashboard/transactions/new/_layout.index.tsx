@@ -18,13 +18,20 @@ export const Route = createFileRoute(
 function RouteComponent() {
   const { categories } = Route.useLoaderData()
 
+  const handleSubmit = async (data) => {
+    
+  }
+
   return (
     <Card className='max-w-screen-md mt-4'>
       <CardHeader>
         <CardTitle>New Transaction</CardTitle>
       </CardHeader>
       <CardContent>
-        <TransactionForm categories={categories} />
+        <TransactionForm
+          categories={categories}
+          onSubmit={handleSubmit}
+        />
       </CardContent>
     </Card>
   )
