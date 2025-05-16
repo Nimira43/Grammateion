@@ -1,3 +1,4 @@
+import authMiddleware from '@/authMiddleware'
 import { createServerFn } from '@tanstack/start'
 import { addDays } from 'date-fns'
 import { z } from 'zod'
@@ -22,6 +23,7 @@ const transactionSchema = z.object({
 export const createTransaction = createServerFn({
   method: 'POST'
 })
+  .middleware([authMiddleware])
   .validator((data: z.infer<typeof transactionSchema>) =>
     transactionSchema.parse(data)
   )
