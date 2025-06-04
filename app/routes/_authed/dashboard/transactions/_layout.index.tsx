@@ -11,7 +11,7 @@ export const Route = createFileRoute(
   '/_authed/dashboard/transactions/_layout/',
 )({
   component: RouteComponent,
-  validateSearch:
+  validateSearch: searchSchema
 })
 
 function RouteComponent() {
