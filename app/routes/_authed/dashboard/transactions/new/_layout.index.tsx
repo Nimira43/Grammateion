@@ -41,7 +41,11 @@ function RouteComponent() {
       className: 'bg-green-500 text-light',
     })
     navigate({
-      to: '/dashboard/transactions'
+      to: '/dashboard/transactions',
+      search: {
+        month: data.transactionDate.getMonth() + 1,
+        year: data.transactionDate.getFullYear()
+      }
     })
   }
 
