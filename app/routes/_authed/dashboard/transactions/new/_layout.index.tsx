@@ -33,6 +33,12 @@ function RouteComponent() {
       }
     })
     console.log({ transaction })
+
+    toast({
+      title: 'Success',
+      description: 'Transaction created.',
+      className: 'bg-green-500 text-light',
+    })
   }
 
   return (
