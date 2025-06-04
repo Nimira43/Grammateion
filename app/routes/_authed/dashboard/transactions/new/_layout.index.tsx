@@ -2,6 +2,7 @@ import { TransactionForm, transactionFormSchema } from '@/components/transaction
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { createTransaction } from '@/data/createTransaction'
 import { getCategories } from '@/data/getCategories'
+import { useToast } from '@/hooks/use-toast'
 import { createFileRoute } from '@tanstack/react-router'
 import { format } from 'date-fns'
 import { z } from 'zod'
@@ -20,6 +21,7 @@ export const Route = createFileRoute(
 
 function RouteComponent() {
   const { categories } = Route.useLoaderData()
+  const { toast } = useToast()
 
   const handleSubmit = async (data: z.infer<typeof transactionFormSchema>) => {
     const transaction = await createTransaction({
