@@ -1,0 +1,18 @@
+import authMiddleware from '@/authMiddleware'
+import { db } from '@/db'
+import { transactionsTable } from '@/db/schema'
+import { createServerFn } from '@tanstack/start'
+import { asc, eq } from 'drizzle-orm'
+
+export const getTransactionYearsRange = createServerFn({
+  method: 'GET'
+})
+  .middleware([authMiddleware])
+  .handler(async ({ context }) => {
+    const[earliestTransaction] = await db
+      .select()
+      .from(transactionsTable)
+      .where(eq(transactionsTable.userId, context.userId))
+      .orderBy(asc(transactionsTable.transactionDate))
+      .limit(1)
+})
