@@ -14,9 +14,13 @@ export function AllTransactions({
     <Card className='mt-4'>
       <CardHeader>
         <CardTitle
-          className='font-medium'
+          className='flex justify-between'
         >
-          Transactions for {format(selectedDate, 'MMMM yyyy')} 
+          <span className='font-medium'>
+            Transactions for {format(selectedDate, 'MMMM yyyy')} 
+          </span>
+          <div>Select</div>
+          
         </CardTitle>
       </CardHeader>
     </Card>
