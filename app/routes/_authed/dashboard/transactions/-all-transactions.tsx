@@ -53,24 +53,21 @@ export function AllTransactions({
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                {Array.from({length: 12}).map((_, i) => (
-                  <SelectItem 
-                    key= {i} 
-                    value={`${i + 1}`}
-                  >
-                    {format(new Date(selectedDate.getFullYear(), i, 1), 'MMMM')}
-                  </SelectItem>
-                ))}
               </SelectContent>
             </Select>
             <Button asChild>
-              <Link className='uppercase'>
+              <Link 
+                to='/dashboard/transactions'
+                search={{
+                  month: selectedMonth,
+                  year: 2025
+                }}
+                className='uppercase'
+              >
                 Submit
-              </Link>
-              
+              </Link>      
             </Button>
           </div>
-          
         </CardTitle>
       </CardHeader>
     </Card>
