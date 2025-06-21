@@ -25,7 +25,10 @@ export function AllTransactions({
             Transactions for {format(selectedDate, 'MMMM yyyy')} 
           </span>
           <div className='flex gap-1'>
-            <Select>
+            <Select 
+              value={selectedMonth.toString()}
+              onValueChange={value => setSelectedMonth(Number(value))}
+            >
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>
