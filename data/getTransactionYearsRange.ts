@@ -17,7 +17,15 @@ export const getTransactionYearsRange = createServerFn({
       .orderBy(asc(transactionsTable.transactionDate))
       .limit(1)
     
+    const currentYear = today.getFullYear()   
     const earliestYear = earliestTransaction 
       ? new Date(earliestTransaction.transactionDate).getFullYear()
-      : today.getFullYear() 
-})
+      : currentYear
+    
+    const years = Array.from({
+      length: currentYear - earliestYear + 1
+    }).map((_, i) => {
+        return currentYear - i
+    })
+    return years
+  })
