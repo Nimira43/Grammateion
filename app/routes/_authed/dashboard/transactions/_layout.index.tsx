@@ -26,11 +26,14 @@ export const Route = createFileRoute(
   loaderDeps: ({search}) => {
     return {
       month: search.month,
-      year: search.year
+      year: search.year,
     }
   },
-  loader: async () => {
-
+  loader: async ({deps}) => {
+    return {
+      month: deps.month,
+      year: deps.year,
+    }
   }
 })
 
