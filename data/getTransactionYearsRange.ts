@@ -16,4 +16,8 @@ export const getTransactionYearsRange = createServerFn({
       .where(eq(transactionsTable.userId, context.userId))
       .orderBy(asc(transactionsTable.transactionDate))
       .limit(1)
+    
+    const earliestYear = earliestTransaction 
+      ? new Date(earliestTransaction.transactionDate).getFullYear()
+      : today.getFullYear() 
 })
