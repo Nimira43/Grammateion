@@ -9,6 +9,7 @@ export const getTransactionYearsRange = createServerFn({
 })
   .middleware([authMiddleware])
   .handler(async ({ context }) => {
+    const today = new Date()
     const[earliestTransaction] = await db
       .select()
       .from(transactionsTable)
