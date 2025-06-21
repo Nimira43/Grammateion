@@ -44,8 +44,8 @@ export function AllTransactions({
               </SelectContent>
             </Select>
             <Select 
-              value={selectedMonth.toString()}
-              onValueChange={value => setSelectedMonth(Number(value))}
+              value={selectedYear.toString()}
+              onValueChange={value => setSelectedYear(Number(value))}
             >
               <SelectTrigger>
                 <SelectValue />
