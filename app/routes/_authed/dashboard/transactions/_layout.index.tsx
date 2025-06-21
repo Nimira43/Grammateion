@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
+import { AllTransactions } from './-all-transactions'
 
 const today = new Date()
 const searchSchema = z.object({
@@ -25,5 +26,5 @@ export const Route = createFileRoute(
 })
 
 function RouteComponent() {
-  return <div>Hello '/_authed/dashboard/transactions/'!</div>
+  return <AllTransactions />
 }
