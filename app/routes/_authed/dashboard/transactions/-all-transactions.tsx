@@ -55,6 +55,14 @@ export function AllTransactions({
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
+                {yearsRange.map((year) => (
+                  <SelectItem
+                    key={year}
+                    value={year.toString()}
+                  >
+                    {year}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
             <Button asChild>
