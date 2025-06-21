@@ -1,4 +1,5 @@
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { format } from 'date-fns'
 
 export function AllTransactions({
   month,
@@ -7,11 +8,15 @@ export function AllTransactions({
   month: number
   year: number
 }) {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>
+  const selectedDate = new Date(year, month - 1, 1)
 
+  return (
+    <Card className='mt-4'>
+      <CardHeader>
+        <CardTitle
+          className='font-medium'
+        >
+          Transactions for {format(selectedDate, 'MMMM yyyy')} 
         </CardTitle>
       </CardHeader>
     </Card>
