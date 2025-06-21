@@ -195,7 +195,7 @@ export function TransactionForm({
               )
             }}
           />
-          <Button type='submit'>
+          <Button type='submit' className='uppercase'>
             {form.formState.isSubmitting ? 'Submitting...' : 'Submit'}
           </Button>
         </fieldset>

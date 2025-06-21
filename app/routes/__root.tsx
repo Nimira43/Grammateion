@@ -10,7 +10,6 @@ import { Meta, Scripts } from '@tanstack/start'
 import type { ReactNode } from 'react'
 import appCss from '../app.css?url'
 // Supports weights 100-900
-import leagueSpartan from '@fontsource-variable/league-spartan?url'
 import { BookOpenCheck } from 'lucide-react'
 import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/tanstack-start'
 import { Button } from '@/components/ui/button'
@@ -44,10 +43,6 @@ export const Route = createRootRoute({
       {
         rel: 'stylesheet', 
         href: appCss,
-      },
-      {
-        rel: 'stylesheet', 
-        href: leagueSpartan,
       },
     ],
   }),

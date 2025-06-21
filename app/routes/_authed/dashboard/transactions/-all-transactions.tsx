@@ -1,6 +1,8 @@
+import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
 import { SelectValue } from '@radix-ui/react-select'
+import { Link } from '@tanstack/react-router'
 import { format } from 'date-fns'
 import { useState } from 'react'
 
@@ -61,7 +63,12 @@ export function AllTransactions({
                 ))}
               </SelectContent>
             </Select>
-
+            <Button asChild>
+              <Link className='uppercase'>
+                Submit
+              </Link>
+              
+            </Button>
           </div>
           
         </CardTitle>
