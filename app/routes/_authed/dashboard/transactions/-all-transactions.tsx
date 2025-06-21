@@ -43,6 +43,24 @@ export function AllTransactions({
                 ))}
               </SelectContent>
             </Select>
+            <Select 
+              value={selectedMonth.toString()}
+              onValueChange={value => setSelectedMonth(Number(value))}
+            >
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {Array.from({length: 12}).map((_, i) => (
+                  <SelectItem 
+                    key= {i} 
+                    value={`${i + 1}`}
+                  >
+                    {format(new Date(selectedDate.getFullYear(), i, 1), 'MMMM')}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
 
           </div>
           
