@@ -2,7 +2,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 
 export function AllTransactions({
   month,
-  year
+  year,
 }: {
   month: number
   year: number

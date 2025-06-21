@@ -22,9 +22,22 @@ export const Route = createFileRoute(
   '/_authed/dashboard/transactions/_layout/',
 )({
   component: RouteComponent,
-  validateSearch: searchSchema
+  validateSearch: searchSchema,
+  loaderDeps: ({search}) => {
+    return {
+      month: search.month,
+      year: search.year
+    }
+  },
+  loader: async () => {
+
+  }
 })
 
 function RouteComponent() {
-  return <AllTransactions />
+  return (
+    <AllTransactions 
+    
+    />
+  )
 }
