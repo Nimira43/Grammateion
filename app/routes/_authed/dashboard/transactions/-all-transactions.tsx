@@ -2,6 +2,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
 import { SelectValue } from '@radix-ui/react-select'
 import { format } from 'date-fns'
+import { useState } from 'react'
 
 export function AllTransactions({
   month,
@@ -10,6 +11,8 @@ export function AllTransactions({
   month: number
   year: number
 }) {
+  const [selectedMonth, setSelectedMonth] = useState(month)
+  const [selectedYear, setSelectedYear] = useState(year)
   const selectedDate = new Date(year, month - 1, 1)
 
   return (
