@@ -1,5 +1,13 @@
+import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+
 export function AllTransactions() {
   return (
-    <div>All Transactions</div>
+    <Card>
+      <CardHeader>
+        <CardTitle>
+          
+        </CardTitle>
+      </CardHeader>
+    </Card>
   )
 }
