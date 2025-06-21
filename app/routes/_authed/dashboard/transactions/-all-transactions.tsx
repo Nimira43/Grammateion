@@ -57,8 +57,8 @@ export function AllTransactions({
               <SelectContent>
                 {yearsRange.map((year) => (
                   <SelectItem
-                    key={year}
                     value={year.toString()}
+                    key={year}
                   >
                     {year}
                   </SelectItem>
@@ -70,7 +70,7 @@ export function AllTransactions({
                 to='/dashboard/transactions'
                 search={{
                   month: selectedMonth,
-                  year: 2025
+                  year: selectedYear,
                 }}
                 className='uppercase'
               >
