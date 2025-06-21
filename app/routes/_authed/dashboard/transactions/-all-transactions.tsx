@@ -7,9 +7,11 @@ import { format } from 'date-fns'
 import { useState } from 'react'
 
 export function AllTransactions({
+  yearsRange,
   month,
   year,
 }: {
+  yearsRange: number[]
   month: number
   year: number
 }) {
