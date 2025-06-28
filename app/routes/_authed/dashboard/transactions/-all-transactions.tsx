@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
 import { SelectValue } from '@radix-ui/react-select'
 import { Link } from '@tanstack/react-router'
@@ -79,7 +79,18 @@ export function AllTransactions({
             </Button>
           </div>
         </CardTitle>
+        
       </CardHeader>
+      <CardContent>
+        <Button asChild>
+          <Link 
+            to='/dashboard/transactions/new'
+            className='uppercase'
+          >
+              New Transaction
+          </Link>
+        </Button>
+      </CardContent>
     </Card>
   )
 }
