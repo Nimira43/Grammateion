@@ -27,9 +27,24 @@ export const getTransactionsByMonth = createServerFn({
   .handler(async ({context, data}) => {
     const earliestDate = new Date(data.year, data.month - 1, 1)
     const latestDate = new Date(data.year, data.month, 0) 
-    const transactions = await db.select().from(transactionsTable).where(and(eq(transactionsTable.userId, context.userId),
-    gte(transactionsTable.transactionDate, format(earliestDate, 'yyyy-MM-dd')),
-    lte(transactionsTable.transactionDate, format(latestDate, 'yyyy-MM-dd'))
-  ))
-  return transactions
+    const transactions = await db
+      .select()
+      .from(transactionsTable)
+      .where(
+        and(
+          eq(
+            transactionsTable.userId, 
+            context.userId
+          ),
+          gte(
+            transactionsTable.transactionDate, 
+            format(earliestDate, 'yyyy-MM-dd')
+          ),
+          lte(
+            transactionsTable.transactionDate, 
+            format(latestDate, 'yyyy-MM-dd')
+          )
+        )
+      )
+    return transactions
 })
