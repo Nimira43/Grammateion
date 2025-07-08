@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { AllTransactions } from './-all-transactions'
 import { getTransactionYearsRange } from '@/data/getTransactionYearsRange'
+import { getTransactionsByMonth } from '@/data/getTransactionsByMonth'
 
 const today = new Date()
 const searchSchema = z.object({
@@ -33,6 +34,7 @@ export const Route = createFileRoute(
   },
   loader: async ({deps}) => {
     const yearsRange = await getTransactionYearsRange()
+    const transactions = await getTransactionsByMonth()
     return {
       yearsRange,
       month: deps.month,
