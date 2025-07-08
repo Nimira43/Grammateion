@@ -34,7 +34,12 @@ export const Route = createFileRoute(
   },
   loader: async ({deps}) => {
     const yearsRange = await getTransactionYearsRange()
-    const transactions = await getTransactionsByMonth()
+    const transactions = await getTransactionsByMonth({
+      data: {
+        month: deps.month,
+        year: deps.year
+      }
+    })
     return {
       yearsRange,
       month: deps.month,
