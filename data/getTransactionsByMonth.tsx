@@ -17,6 +17,10 @@ const schema = z.object({
 
 export const getTransactionsByMonth = createServerFn({
   method: 'GET'
-}).middleware([authMiddleware]).validator((data: z.infer<typeof schema>) => {
-  schema.parse(data)
+})
+  .middleware([authMiddleware])
+  .validator((data: z.infer<typeof schema>) => schema.parse(data))
+  .handler(async ({context, data}) => {
+    
+  }
 })
