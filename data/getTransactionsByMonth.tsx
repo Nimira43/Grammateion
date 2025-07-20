@@ -28,7 +28,12 @@ export const getTransactionsByMonth = createServerFn({
     const earliestDate = new Date(data.year, data.month - 1, 1)
     const latestDate = new Date(data.year, data.month, 0) 
     const transactions = await db
-      .select()
+      .select({
+        id: transactionsTable.id,
+        description: transactionsTable.description,
+        amount: transactionsTable.amount,
+        transactionDate: transactionsTable.transactionDate
+      })
       .from(transactionsTable)
       .where(
         and(
