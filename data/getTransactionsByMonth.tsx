@@ -3,7 +3,7 @@ import { db } from '@/db'
 import { transactionsTable } from '@/db/schema'
 import { createServerFn } from '@tanstack/start'
 import { format } from 'date-fns'
-import { and, eq, gte, lte } from 'drizzle-orm'
+import { and, desc, eq, gte, lte } from 'drizzle-orm'
 import { z } from 'zod'
 
 const today = new Date()
@@ -46,5 +46,9 @@ export const getTransactionsByMonth = createServerFn({
           )
         )
       )
+        .orderBy(desc(transactionsTable.transactionDate))
+        
+
+
     return transactions
 })
