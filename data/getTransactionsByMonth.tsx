@@ -32,7 +32,9 @@ export const getTransactionsByMonth = createServerFn({
         id: transactionsTable.id,
         description: transactionsTable.description,
         amount: transactionsTable.amount,
-        transactionDate: transactionsTable.transactionDate
+        transactionDate: transactionsTable.transactionDate,
+        catgory: categoriesTable.name,
+        transactionType: categoriesTable.type
       })
       .from(transactionsTable)
       .where(
