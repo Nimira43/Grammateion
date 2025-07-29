@@ -1,3 +1,4 @@
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
@@ -131,7 +132,13 @@ export function AllTransactions({
                   {transaction.description}
                 </TableCell>
                 <TableCell>
-                  {transaction.transactionType}
+                  <Badge className={
+                    transaction.transactionType === 'income'
+                    ? 'bg-green-400'
+                    : 'bg-red-400'
+                  }>
+                    {transaction.transactionType}
+                  </Badge>
                 </TableCell>
               </TableRow>
             ))}
