@@ -8,6 +8,7 @@ import { Link } from '@tanstack/react-router'
 import { format } from 'date-fns'
 import { useState } from 'react'
 import numeral from 'numeral'
+import { LucidePencil } from 'lucide-react'
 
 export function AllTransactions({
   yearsRange,
@@ -146,6 +147,14 @@ export function AllTransactions({
                 </TableCell>
                 <TableCell>
                   £{numeral(transaction.amount).format('0,0[.]00')}
+                </TableCell>
+                <TableCell className='text-right'>
+                  <Button>
+                    <LucidePencil 
+                      size='icon' 
+                      aria-label='Edit Transactions'
+                    />
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}
