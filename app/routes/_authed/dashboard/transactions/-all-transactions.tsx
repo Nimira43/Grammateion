@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
-import { Table, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { SelectValue } from '@radix-ui/react-select'
 import { Link } from '@tanstack/react-router'
 import { format } from 'date-fns'
@@ -22,6 +22,7 @@ export function AllTransactions({
     amount: string
     category: string | null
     transactionType: 'income' | 'expense' | null
+    transactionDate: string
   }[]
 }) {
   const [selectedMonth, setSelectedMonth] = useState(month)
@@ -120,6 +121,15 @@ export function AllTransactions({
               <TableHead />
             </TableRow>
           </TableHeader>
+          <TableBody>
+            {transactions.map(transaction => (
+              <TableRow key={transaction.id}>
+                <TableCell>
+                  {format(transaction.transactionDate, "do MMM yyyy")}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
         </Table>
       </CardContent>
     </Card>
