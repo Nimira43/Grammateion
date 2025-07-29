@@ -103,8 +103,21 @@ export function AllTransactions({
           <TableHeader>
             <TableRow>
               <TableHead>
-                
+                Date
               </TableHead>
+              <TableHead>
+                Description
+              </TableHead>
+              <TableHead>
+                Type
+              </TableHead>
+              <TableHead>
+                Category
+              </TableHead>
+              <TableHead>
+                Amount
+              </TableHead>
+              <TableHead />
             </TableRow>
           </TableHeader>
         </Table>
