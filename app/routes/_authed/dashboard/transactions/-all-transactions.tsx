@@ -145,7 +145,7 @@ export function AllTransactions({
                   {transaction.category}
                 </TableCell>
                 <TableCell>
-                  {transaction.amount}
+                  £{numeral(transaction.amount).format('0,0[.]00')}
                 </TableCell>
               </TableRow>
             ))}
