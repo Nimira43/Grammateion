@@ -127,6 +127,9 @@ export function AllTransactions({
                 <TableCell>
                   {format(transaction.transactionDate, "do MMM yyyy")}
                 </TableCell>
+                <TableCell>
+                  {transaction.description}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
