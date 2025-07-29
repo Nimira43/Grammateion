@@ -108,64 +108,65 @@ export function AllTransactions({
           <p className='text-center py-10 text-lg text-dark'>There are no transactions for this month.</p>
         )}
 
-
-        <Table className='mt-4'>
-          <TableHeader>
-            <TableRow>
-              <TableHead>
-                Date
-              </TableHead>
-              <TableHead>
-                Description
-              </TableHead>
-              <TableHead>
-                Type
-              </TableHead>
-              <TableHead>
-                Category
-              </TableHead>
-              <TableHead>
-                Amount
-              </TableHead>
-              <TableHead />
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {transactions.map(transaction => (
-              <TableRow key={transaction.id}>
-                <TableCell>
-                  {format(transaction.transactionDate, "do MMM yyyy")}
-                </TableCell>
-                <TableCell>
-                  {transaction.description}
-                </TableCell>
-                <TableCell className='uppercase'>
-                  <Badge className={
-                    transaction.transactionType === 'income'
-                    ? 'bg-green-400'
-                    : 'bg-red-400'
-                  }>
-                    {transaction.transactionType}
-                  </Badge>
-                </TableCell>
-                <TableCell>
-                  {transaction.category}
-                </TableCell>
-                <TableCell>
-                  £{numeral(transaction.amount).format('0,0[.]00')}
-                </TableCell>
-                <TableCell className='text-right'>
-                  <Button>
-                    <LucidePencil 
-                      size='icon' 
-                      aria-label='Edit Transactions'
-                    />
-                  </Button>
-                </TableCell>
+        {!!transactions.length && (
+          <Table className='mt-4'>
+            <TableHeader>
+              <TableRow>
+                <TableHead>
+                  Date
+                </TableHead>
+                <TableHead>
+                  Description
+                </TableHead>
+                <TableHead>
+                  Type
+                </TableHead>
+                <TableHead>
+                  Category
+                </TableHead>
+                <TableHead>
+                  Amount
+                </TableHead>
+                <TableHead />
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {transactions.map(transaction => (
+                <TableRow key={transaction.id}>
+                  <TableCell>
+                    {format(transaction.transactionDate, "do MMM yyyy")}
+                  </TableCell>
+                  <TableCell>
+                    {transaction.description}
+                  </TableCell>
+                  <TableCell className='uppercase'>
+                    <Badge className={
+                      transaction.transactionType === 'income'
+                      ? 'bg-green-400'
+                      : 'bg-red-400'
+                    }>
+                      {transaction.transactionType}
+                    </Badge>
+                  </TableCell>
+                  <TableCell>
+                    {transaction.category}
+                  </TableCell>
+                  <TableCell>
+                    £{numeral(transaction.amount).format('0,0[.]00')}
+                  </TableCell>
+                  <TableCell className='text-right'>
+                    <Button>
+                      <LucidePencil 
+                        size='icon' 
+                        aria-label='Edit Transactions'
+                      />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        )}
       </CardContent>
     </Card>
   )
