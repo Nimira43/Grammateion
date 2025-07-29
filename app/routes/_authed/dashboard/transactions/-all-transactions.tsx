@@ -91,9 +91,9 @@ export function AllTransactions({
               </Link>      
             </Button>
           </div>
-        </CardTitle>
-        
+        </CardTitle>  
       </CardHeader>
+
       <CardContent>
         <Button asChild>
           <Link 
@@ -103,6 +103,12 @@ export function AllTransactions({
               New Transaction
           </Link>
         </Button>
+        
+        {!transactions.length && (
+          <p className='text-center py-10 text-lg text-dark'>There are no transactions for this month.</p>
+        )}
+
+
         <Table className='mt-4'>
           <TableHeader>
             <TableRow>
