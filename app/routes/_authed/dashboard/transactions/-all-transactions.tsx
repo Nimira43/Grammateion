@@ -131,7 +131,7 @@ export function AllTransactions({
                 <TableCell>
                   {transaction.description}
                 </TableCell>
-                <TableCell>
+                <TableCell className='uppercase'>
                   <Badge className={
                     transaction.transactionType === 'income'
                     ? 'bg-green-400'
@@ -139,6 +139,12 @@ export function AllTransactions({
                   }>
                     {transaction.transactionType}
                   </Badge>
+                </TableCell>
+                <TableCell>
+                  {transaction.category}
+                </TableCell>
+                <TableCell>
+                  {transaction.amount}
                 </TableCell>
               </TableRow>
             ))}

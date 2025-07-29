@@ -33,7 +33,7 @@ export const getTransactionsByMonth = createServerFn({
         description: transactionsTable.description,
         amount: transactionsTable.amount,
         transactionDate: transactionsTable.transactionDate,
-        catgory: categoriesTable.name,
+        category: categoriesTable.name,
         transactionType: categoriesTable.type
       })
       .from(transactionsTable)
