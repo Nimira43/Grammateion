@@ -130,6 +130,9 @@ export function AllTransactions({
                 <TableCell>
                   {transaction.description}
                 </TableCell>
+                <TableCell>
+                  {transaction.transactionType}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
