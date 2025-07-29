@@ -10,10 +10,18 @@ export function AllTransactions({
   yearsRange,
   month,
   year,
+  transactions
 }: {
   yearsRange: number[]
   month: number
   year: number
+  transactions: {
+    id: number
+    description: string
+    amount: string
+    category: string
+    transactionType: 'income' | 'expense'
+  }[]
 }) {
   const [selectedMonth, setSelectedMonth] = useState(month)
   const [selectedYear, setSelectedYear] = useState(year)
