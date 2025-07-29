@@ -7,6 +7,7 @@ import { SelectValue } from '@radix-ui/react-select'
 import { Link } from '@tanstack/react-router'
 import { format } from 'date-fns'
 import { useState } from 'react'
+import numeral from 'numeral'
 
 export function AllTransactions({
   yearsRange,
