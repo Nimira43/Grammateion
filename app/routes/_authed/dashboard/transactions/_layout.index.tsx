@@ -54,6 +54,7 @@ function RouteComponent() {
   console.log({transactions})
   return (
     <AllTransactions 
+      transactions={transactions}
       month={month}
       year={year}
       yearsRange={yearsRange}
