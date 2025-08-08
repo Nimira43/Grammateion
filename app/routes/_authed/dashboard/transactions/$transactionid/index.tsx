@@ -8,6 +8,6 @@ export const Route = createFileRoute(
 
 function RouteComponent() {
   return (
-    <div>Hello "/_authed/dashboard/transactions/$transactionid/imdex"!</div>
+    <div>Hello "/_authed/dashboard/transactions/$transactionid/"!</div>
   )
 }
