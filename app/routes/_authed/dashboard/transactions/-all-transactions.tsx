@@ -155,11 +155,16 @@ export function AllTransactions({
                     £{numeral(transaction.amount).format('0,0[.]00')}
                   </TableCell>
                   <TableCell className='text-right'>
-                    <Button>
-                      <LucidePencil 
+                    <Button asChild>
+                      <Link
+                        to='/dashboard/transactions/$transactionid'
+                        params={{ transactionid: transaction.id.toString() }}               
+                      >
+                        <LucidePencil 
                         size='icon' 
                         aria-label='Edit Transactions'
                       />
+                      </Link>
                     </Button>
                   </TableCell>
                 </TableRow>
