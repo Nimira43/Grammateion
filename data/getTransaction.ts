@@ -1,5 +1,8 @@
+import { transactionsTable } from './../db/schema';
 import authMiddleware from '@/authMiddleware'
+import { db } from '@/db'
 import { createServerFn } from '@tanstack/start'
+import { and, eq } from 'drizzle-orm';
 import { z } from 'zod'
 
 const schema = z.object({
@@ -12,5 +15,14 @@ export const getTransaction = createServerFn({
   .middleware([authMiddleware])
   .validator((data: z.infer<typeof schema>) => schema.parse(data))
   .handler(async ({data, context}) => {
-    
+    const [transaction] = await db
+      .select()
+      .from(transactionsTable)
+      .where(
+        and(
+          eq(transactionsTable.id, data.transactionId),
+          eq(transactionsTable.userId, context.userId)
+        )
+      )
+    return transaction
   })
