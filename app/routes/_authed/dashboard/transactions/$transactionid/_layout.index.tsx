@@ -1,14 +1,24 @@
 import { TransactionForm } from '@/components/transaction-form'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
+import { getTransaction } from '@/data/getTransaction'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute(
   '/_authed/dashboard/transactions/$transactionid/_layout/',
 )({
   component: RouteComponent,
-  loader: async () => {
-    const categories = await getCategories()
+  loader: async ({
+    params
+  }) => {
+    const categories = await Promise.all([
+      getCategories(),
+      getTransaction({
+        data: {
+          transactionId: Number(params.transactionid)
+        }
+      })
+    ])
     return {
       categories
     }
