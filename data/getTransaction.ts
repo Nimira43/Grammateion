@@ -8,4 +8,9 @@ const schema = z.object({
 
 export const getTransaction = createServerFn({
   method: 'GET',
-}).middleware([authMiddleware]).validator(schema)
+})
+  .middleware([authMiddleware])
+  .validator((data: z.infer<typeof schema>) => schema.parse(data))
+  .handler(async ({data, context}) => {
+    
+  })
