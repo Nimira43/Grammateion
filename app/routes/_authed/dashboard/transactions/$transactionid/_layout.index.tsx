@@ -40,7 +40,10 @@ function RouteComponent() {
             categoryId: transaction.categoryId,
             description: transaction.description,
             transactionDate: new Date(transaction.transactionDate),
-            transactionType: categories.find(category => category.id === transaction.categoryId)?.type ?? 'income',
+            transactionType: 
+              categories.find(
+                category => category.id === transaction.categoryId
+              )?.type ?? 'income',
           }}
           categories={categories}
           onSubmit={handleSubmit}
