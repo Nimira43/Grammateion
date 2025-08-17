@@ -8,10 +8,8 @@ export const Route = createFileRoute(
   '/_authed/dashboard/transactions/$transactionid/_layout/',
 )({
   component: RouteComponent,
-  loader: async ({
-    params
-  }) => {
-    const categories = await Promise.all([
+  loader: async ({ params }) => {
+    const [categories, transaction] = await Promise.all([
       getCategories(),
       getTransaction({
         data: {
@@ -20,13 +18,14 @@ export const Route = createFileRoute(
       })
     ])
     return {
+      transaction,
       categories
     }
   }
 })
 
 function RouteComponent() {
-  const { categories } = Route.useLoaderData() 
+  const { categories, transaction } = Route.useLoaderData() 
   const handleSubmit = async () => {}
 
   return (
