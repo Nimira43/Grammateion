@@ -4,6 +4,7 @@ import { getCategories } from '@/data/getCategories'
 import { getTransaction } from '@/data/getTransaction'
 import { updateTransaction } from '@/data/updateTransaction'
 import { createFileRoute } from '@tanstack/react-router'
+import { format } from 'date-fns'
 import { z } from 'zod'
 
 export const Route = createFileRoute(
@@ -43,7 +44,9 @@ function RouteComponent() {
       data: {
         id: transaction.id,
         amount: data.amount,
-        transactionDate: data.transactionDate,
+        transactionDate: format(data.transactionDate, 'yyyy-MM-dd'),
+        categoryId: data.categoryId,
+        description: data.description
       }
     })
   }
