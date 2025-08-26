@@ -1,8 +1,9 @@
-import { TransactionForm } from '@/components/transaction-form'
+import { TransactionForm, transactionFormSchema } from '@/components/transaction-form'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
 import { getTransaction } from '@/data/getTransaction'
 import { createFileRoute } from '@tanstack/react-router'
+import { z } from 'zod'
 
 export const Route = createFileRoute(
   '/_authed/dashboard/transactions/$transactionid/_layout/',
@@ -36,7 +37,7 @@ export const Route = createFileRoute(
 
 function RouteComponent() {
   const { categories, transaction } = Route.useLoaderData() 
-  const handleSubmit = async () => {}
+  const handleSubmit = async (data: z.infer<typeof transactionFormSchema>) => {}
 
   return (
     <Card className='max-w-screen-md mt-4'>
