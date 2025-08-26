@@ -8,6 +8,11 @@ export const Route = createFileRoute(
   '/_authed/dashboard/transactions/$transactionid/_layout/',
 )({
   component: RouteComponent,
+  errorComponent: ({error}) => {
+    return (
+      <div>{error.message}</div>
+    )
+  },
   loader: async ({ params }) => {
     const [categories, transaction] = await Promise.all([
       getCategories(),
