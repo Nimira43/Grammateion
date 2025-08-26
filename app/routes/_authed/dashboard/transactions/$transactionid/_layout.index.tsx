@@ -8,9 +8,9 @@ export const Route = createFileRoute(
   '/_authed/dashboard/transactions/$transactionid/_layout/',
 )({
   component: RouteComponent,
-  errorComponent: ({error}) => {
+  errorComponent: () => {
     return (
-      <div>{error.message}</div>
+      <div className='text-3xl text-dark mt-6'>Something is not right. Transaction not found.</div>
     )
   },
   loader: async ({ params }) => {
@@ -22,6 +22,11 @@ export const Route = createFileRoute(
         }
       })
     ])
+
+    if (!transaction) {
+      throw new Error('Transaction not found.')
+    }
+
     return {
       transaction,
       categories
