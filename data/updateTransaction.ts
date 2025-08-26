@@ -3,6 +3,7 @@ import { db } from '@/db'
 import { transactionsTable } from '@/db/schema'
 import { createServerFn } from '@tanstack/start'
 import { addDays } from 'date-fns'
+import { and, eq } from 'drizzle-orm'
 import { z } from 'zod'
 
 const schema = z.object({
@@ -36,4 +37,11 @@ export const updateTransaction = createServerFn({
       transactionDate: data.transactionDate,
       description:data.description
     })
+    .where(
+      and(
+        eq(
+          transactionsTable.id, data.id,
+        ),
+      )
+    )
   })
