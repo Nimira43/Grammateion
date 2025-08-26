@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { SelectValue } from '@radix-ui/react-select'
-import { Link } from '@tanstack/react-router'
+import { Link, useRouter } from '@tanstack/react-router'
 import { format } from 'date-fns'
 import { useState } from 'react'
 import numeral from 'numeral'
@@ -28,6 +28,7 @@ export function AllTransactions({
     transactionDate: string
   }[]
 }) {
+  const router = useRouter()
   const [selectedMonth, setSelectedMonth] = useState(month)
   const [selectedYear, setSelectedYear] = useState(year)
   const selectedDate = new Date(year, month - 1, 1)
@@ -157,6 +158,9 @@ export function AllTransactions({
                   <TableCell className='text-right'>
                     <Button asChild>
                       <Link
+                        onClick={() => {
+
+                        }}
                         to='/dashboard/transactions/$transactionid'
                         params={{ transactionid: transaction.id.toString() }}               
                       >
