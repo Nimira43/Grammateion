@@ -52,6 +52,19 @@ function RouteComponent() {
         description: data.description
       }
     })
+
+    toast({
+      title: 'Success',
+      description: 'Transaction created.',
+      className: 'bg-green-500 text-light',
+    })
+    navigate({
+      to: '/dashboard/transactions',
+      search: {
+        month: data.transactionDate.getMonth() + 1,
+        year: data.transactionDate.getFullYear()
+      }
+    })
   }
 
   return (
