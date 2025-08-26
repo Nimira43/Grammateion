@@ -29,5 +29,11 @@ export const updateTransaction = createServerFn({
   .middleware([authMiddleware])
   .validator((data: z.infer<typeof schema>) => schema.parse(data))
   .handler(async ({context, data}) => {
-    await db.update(transactionsTable)
+    await db.update(transactionsTable).set({
+      userId: context.userId,
+      amount: data.amount.toString(),
+      categoryId: data.categoryId,
+      transactionDate: data.transactionDate,
+      description:data.description
+    })
   })
