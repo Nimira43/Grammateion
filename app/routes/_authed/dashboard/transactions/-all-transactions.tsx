@@ -159,7 +159,9 @@ export function AllTransactions({
                     <Button asChild>
                       <Link
                         onClick={() => {
-
+                          router.clearCache({
+                            filter: (router) => router.pathname !== `/dashboard/transactions/${transaction.id}`
+                          })
                         }}
                         to='/dashboard/transactions/$transactionid'
                         params={{ transactionid: transaction.id.toString() }}               
