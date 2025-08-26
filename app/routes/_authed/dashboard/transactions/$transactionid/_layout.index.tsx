@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
 import { getTransaction } from '@/data/getTransaction'
 import { updateTransaction } from '@/data/updateTransaction'
+import { useToast } from '@/hooks/use-toast'
 import { createFileRoute } from '@tanstack/react-router'
 import { format } from 'date-fns'
 import { z } from 'zod'
@@ -38,7 +39,9 @@ export const Route = createFileRoute(
 })
 
 function RouteComponent() {
+  const { toast } = useToast()
   const { categories, transaction } = Route.useLoaderData() 
+
   const handleSubmit = async (data: z.infer<typeof transactionFormSchema>) => {
     await updateTransaction({
       data: {
