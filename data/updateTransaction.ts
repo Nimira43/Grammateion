@@ -1,4 +1,6 @@
 import authMiddleware from '@/authMiddleware'
+import { db } from '@/db'
+import { transactionsTable } from '@/db/schema'
 import { createServerFn } from '@tanstack/start'
 import { addDays } from 'date-fns'
 import { z } from 'zod'
@@ -26,4 +28,6 @@ export const updateTransaction = createServerFn({
 })
   .middleware([authMiddleware])
   .validator((data: z.infer<typeof schema>) => schema.parse(data))
-  .handler(async () => {})
+  .handler(async ({context, data}) => {
+    await db.update(transactionsTable)
+  })
