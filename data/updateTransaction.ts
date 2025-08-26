@@ -3,4 +3,4 @@ import { createServerFn } from '@tanstack/start'
 
 export const updateTransaction = createServerFn({
   method: 'POST'
-})
+}).middleware(authMiddleware).validator()
