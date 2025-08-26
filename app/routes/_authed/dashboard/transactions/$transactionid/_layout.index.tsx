@@ -2,6 +2,7 @@ import { TransactionForm, transactionFormSchema } from '@/components/transaction
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
 import { getTransaction } from '@/data/getTransaction'
+import { updateTransaction } from '@/data/updateTransaction'
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 
@@ -37,7 +38,15 @@ export const Route = createFileRoute(
 
 function RouteComponent() {
   const { categories, transaction } = Route.useLoaderData() 
-  const handleSubmit = async (data: z.infer<typeof transactionFormSchema>) => {}
+  const handleSubmit = async (data: z.infer<typeof transactionFormSchema>) => {
+    await updateTransaction({
+      data: {
+        id: transaction.id,
+        amount: data.amount,
+        transactionDate: data.transactionDate,
+      }
+    })
+  }
 
   return (
     <Card className='max-w-screen-md mt-4'>
