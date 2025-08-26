@@ -42,6 +42,7 @@ export const updateTransaction = createServerFn({
         eq(
           transactionsTable.id, data.id,
         ),
+        eq(transactionsTable.userId, context.userId)
       )
     )
   })
