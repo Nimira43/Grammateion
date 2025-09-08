@@ -30,19 +30,20 @@ export const updateTransaction = createServerFn({
   .middleware([authMiddleware])
   .validator((data: z.infer<typeof schema>) => schema.parse(data))
   .handler(async ({context, data}) => {
-    await db.update(transactionsTable).set({
-      userId: context.userId,
-      amount: data.amount.toString(),
-      categoryId: data.categoryId,
-      transactionDate: data.transactionDate,
-      description:data.description
-    })
-    .where(
-      and(
-        eq(
-          transactionsTable.id, data.id,
-        ),
-        eq(transactionsTable.userId, context.userId)
+    await db
+      .update(transactionsTable)
+      .set({
+        amount: data.amount.toString(),
+        categoryId: data.categoryId,
+        transactionDate: data.transactionDate,
+        description:data.description
+      })
+      .where(
+        and(
+          eq(
+            transactionsTable.id, data.id,
+          ),
+          eq(transactionsTable.userId, context.userId)
+        )
       )
-    )
   })
