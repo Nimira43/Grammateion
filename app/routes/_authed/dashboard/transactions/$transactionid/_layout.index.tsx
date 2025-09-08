@@ -1,4 +1,6 @@
 import { TransactionForm, transactionFormSchema } from '@/components/transaction-form'
+import { AlertDialog, AlertDialogTrigger } from '@/components/ui/alert-dialog'
+import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
 import { getTransaction } from '@/data/getTransaction'
@@ -6,6 +8,7 @@ import { updateTransaction } from '@/data/updateTransaction'
 import { useToast } from '@/hooks/use-toast'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { format } from 'date-fns'
+
 import { z } from 'zod'
 
 export const Route = createFileRoute(
@@ -75,6 +78,13 @@ function RouteComponent() {
           className='flex justify-between'
         >
           <span>Edit Transaction</span>
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button>
+                
+              </Button>
+            </AlertDialogTrigger>
+          </AlertDialog>
           
         </CardTitle> 
       </CardHeader>
