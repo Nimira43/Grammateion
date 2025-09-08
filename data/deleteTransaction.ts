@@ -7,4 +7,4 @@ const schema = z.object({
 
 export const deleteTransaction = createServerFn({
   method: 'POST'
-}).middleware([authMiddleware]).validator()
+}).middleware([authMiddleware]).validator((data: z.infer<typeof schema>) => schema.parse(data))
