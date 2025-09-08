@@ -1,5 +1,5 @@
 import { TransactionForm, transactionFormSchema } from '@/components/transaction-form'
-import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogHeader, AlertDialogTrigger } from '@/components/ui/alert-dialog'
+import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTrigger } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
@@ -86,18 +86,23 @@ function RouteComponent() {
                 <Trash2Icon />
               </Button>
             </AlertDialogTrigger>
-          </AlertDialog>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>
-                Are you sure? 
-              </AlertDialogTitle>
-              <AlertDialogDescription>
-                This transaction will be permanently deleted. This action cannot be undone.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            
-          </AlertDialogContent>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>
+                  Are you sure? 
+                </AlertDialogTitle>
+                <AlertDialogDescription>
+                  This transaction will be permanently deleted. This action cannot be undone.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <Button>
+                  Delete
+                </Button>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog> 
         </CardTitle> 
       </CardHeader>
       <CardContent>
