@@ -6,7 +6,8 @@ import { and, eq } from 'drizzle-orm'
 import { z } from 'zod'
 
 const schema = z.object({
-  transactionId: z.number()})
+  transactionId: z.number()
+})
 
 export const deleteTransaction = createServerFn({
   method: 'POST'
