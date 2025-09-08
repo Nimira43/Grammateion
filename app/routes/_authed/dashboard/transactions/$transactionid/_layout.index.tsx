@@ -71,7 +71,12 @@ function RouteComponent() {
   return (
     <Card className='max-w-screen-md mt-4'>
       <CardHeader>
-        <CardTitle>Edit Transaction</CardTitle>
+        <CardTitle 
+          className='flex justify-between'
+        >
+          <span>Edit Transaction</span>
+          
+        </CardTitle> 
       </CardHeader>
       <CardContent>
         <TransactionForm
