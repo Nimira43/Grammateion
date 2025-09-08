@@ -1,13 +1,15 @@
 import { TransactionForm, transactionFormSchema } from '@/components/transaction-form'
-import { AlertDialog, AlertDialogTrigger } from '@/components/ui/alert-dialog'
+import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogHeader, AlertDialogTrigger } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { getCategories } from '@/data/getCategories'
 import { getTransaction } from '@/data/getTransaction'
 import { updateTransaction } from '@/data/updateTransaction'
 import { useToast } from '@/hooks/use-toast'
+import { AlertDialogTitle } from '@radix-ui/react-alert-dialog'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { format } from 'date-fns'
+import { Trash2Icon } from 'lucide-react'
 
 import { z } from 'zod'
 
@@ -80,12 +82,22 @@ function RouteComponent() {
           <span>Edit Transaction</span>
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button>
-                
+              <Button size='icon'>
+                <Trash2Icon />
               </Button>
             </AlertDialogTrigger>
           </AlertDialog>
-          
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>
+                Are you sure? 
+              </AlertDialogTitle>
+              <AlertDialogDescription>
+                This transaction will be permanently deleted. This action cannot be undone.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            
+          </AlertDialogContent>
         </CardTitle> 
       </CardHeader>
       <CardContent>
