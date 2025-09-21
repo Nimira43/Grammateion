@@ -80,6 +80,14 @@ function RouteComponent() {
         transactionId: transaction.id
       }
     })
+    
+    navigate({
+      to: '/dashboard/transactions',
+      search: {
+        month: data.transactionDate.getMonth() + 1,
+        year: data.transactionDate.getFullYear()
+      }
+    })
   }
 
   return (
