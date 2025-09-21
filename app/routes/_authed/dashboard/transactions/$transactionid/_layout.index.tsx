@@ -73,6 +73,10 @@ function RouteComponent() {
     })
   }
 
+  const handleDeleteConfirm = async () => {
+    
+  }
+
   return (
     <Card className='max-w-screen-md mt-4'>
       <CardHeader>
