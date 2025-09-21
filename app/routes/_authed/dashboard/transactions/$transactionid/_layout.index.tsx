@@ -59,7 +59,6 @@ function RouteComponent() {
         description: data.description
       }
     })
-
     toast({
       title: 'Success',
       description: 'Transaction updated.',
@@ -80,7 +79,11 @@ function RouteComponent() {
         transactionId: transaction.id
       }
     })
-    
+    toast({
+      title: 'Success',
+      description: 'Transaction deleted.',
+      className: 'bg-green-500 text-light',
+    })
     navigate({
       to: '/dashboard/transactions',
       search: {
