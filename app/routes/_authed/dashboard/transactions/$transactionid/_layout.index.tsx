@@ -76,6 +76,7 @@ function RouteComponent() {
   }
 
   const handleDeleteConfirm = async () => {
+    setDeleting(true)
     await deleteTransaction({
       data: {
         transactionId: transaction.id
