@@ -2,6 +2,7 @@ import { TransactionForm, transactionFormSchema } from '@/components/transaction
 import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTrigger } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { deleteTransaction } from '@/data/deleteTransaction'
 import { getCategories } from '@/data/getCategories'
 import { getTransaction } from '@/data/getTransaction'
 import { updateTransaction } from '@/data/updateTransaction'
@@ -74,7 +75,9 @@ function RouteComponent() {
   }
 
   const handleDeleteConfirm = async () => {
-    
+    await deleteTransaction({
+      
+    })
   }
 
   return (
