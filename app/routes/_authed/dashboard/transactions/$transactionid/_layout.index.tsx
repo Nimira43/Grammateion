@@ -84,8 +84,8 @@ function RouteComponent() {
     navigate({
       to: '/dashboard/transactions',
       search: {
-        month: data.transactionDate.getMonth() + 1,
-        year: data.transactionDate.getFullYear()
+        month: transaction.transactionDate.split('-')[1],
+        year: transaction.transactionDate.split('-')[0],
       }
     })
   }
