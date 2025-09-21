@@ -11,6 +11,7 @@ import { AlertDialogTitle } from '@radix-ui/react-alert-dialog'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { format } from 'date-fns'
 import { Trash2Icon } from 'lucide-react'
+import { useState } from 'react'
 
 import { z } from 'zod'
 
@@ -45,6 +46,7 @@ export const Route = createFileRoute(
 })
 
 function RouteComponent() {
+  const [deleting, setDeleting] = useState(false)
   const { toast } = useToast()
   const navigate = useNavigate()
   const { categories, transaction } = Route.useLoaderData() 
