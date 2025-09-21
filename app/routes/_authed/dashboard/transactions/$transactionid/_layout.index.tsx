@@ -123,7 +123,10 @@ function RouteComponent() {
               </AlertDialogHeader>
               <AlertDialogFooter>
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <Button>
+                <Button
+                  disabled={deleting}
+                  onClick={handleDeleteConfirm}
+                >
                   Delete
                 </Button>
               </AlertDialogFooter>
