@@ -87,6 +87,9 @@ function RouteComponent() {
       description: 'Transaction deleted.',
       className: 'bg-green-500 text-light',
     })
+
+    setDeleting(false)
+
     navigate({
       to: '/dashboard/transactions',
       search: {
