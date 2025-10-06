@@ -6,6 +6,9 @@ export const Route = createFileRoute('/_authed/dashboard/')({
   component: RouteComponent,
   loader: async () => {
     const transactions = await getRecentTransactions()
+    return {
+      transactions,
+    }
   }
 })
 
