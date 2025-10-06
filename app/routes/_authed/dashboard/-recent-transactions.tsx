@@ -4,6 +4,7 @@ import { format } from 'date-fns'
 import { Badge } from '@/components/ui/badge'
 import numeral from 'numeral'
 import { Button } from '@/components/ui/button'
+import { Link } from '@tanstack/react-router'
 
 export function RecentTransactions({
   transactions
@@ -23,11 +24,22 @@ export function RecentTransactions({
         <CardTitle className='flex justify-between'>
           <span>Recent Transactions</span>
           <div className='flex gap-2'>
-            <Button asChild>
-              View All
+            <Button 
+              asChild
+              variant='outline'
+              className='uppercase'
+            >
+              <Link to='/dashboard/transactions'>
+                View All
+              </Link>   
             </Button>
-            <Button asChild>
-              Edit
+            <Button 
+              asChild
+              className='uppercase'
+            >
+              <Link to='/dashboard/transactions/new'>
+                Create New
+              </Link>   
             </Button>
           </div>
         </CardTitle>
