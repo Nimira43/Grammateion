@@ -1,9 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table'
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table'
 import { format } from 'date-fns'
-import { Table, Badge, Link, LucidePencil } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 import numeral from 'numeral'
-import { Button } from 'react-day-picker'
 
 export function RecentTransactions({
   transactions

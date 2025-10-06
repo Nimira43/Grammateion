@@ -128,7 +128,6 @@ export function AllTransactions({
                 <TableHead>
                   Amount
                 </TableHead>
-                <TableHead />
               </TableRow>
             </TableHeader>
             <TableBody>
