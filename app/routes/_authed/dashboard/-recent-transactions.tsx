@@ -3,6 +3,7 @@ import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@
 import { format } from 'date-fns'
 import { Badge } from '@/components/ui/badge'
 import numeral from 'numeral'
+import { Button } from '@/components/ui/button'
 
 export function RecentTransactions({
   transactions
@@ -19,8 +20,16 @@ export function RecentTransactions({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>
-          Recent Transactions
+        <CardTitle className='flex justify-between'>
+          <span>Recent Transactions</span>
+          <div className='flex gap-2'>
+            <Button asChild>
+              View All
+            </Button>
+            <Button asChild>
+              Edit
+            </Button>
+          </div>
         </CardTitle>
       </CardHeader>
       <CardContent>
