@@ -2,7 +2,7 @@ import authMiddleware from '@/authMiddleware'
 import { db } from '@/db'
 import { transactionsTable, categoriesTable } from '@/db/schema'
 import { createServerFn } from '@tanstack/start'
-import { eq } from 'drizzle-orm'
+import { desc, eq } from 'drizzle-orm'
 
 export const getRecentTransactions = createServerFn({
   method: 'GET'
@@ -20,4 +20,5 @@ export const getRecentTransactions = createServerFn({
       })
       .from(transactionsTable)
       .where(eq(transactionsTable.userId, context.userId))
+      .orderBy(desc(transactionsTable.transactionDate))
   })
