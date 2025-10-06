@@ -1,8 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { RecentTransactions } from './-recent-transactions'
+import { getRecentTransactions } from '@/data/getRecentTransactions'
 
 export const Route = createFileRoute('/_authed/dashboard/')({
   component: RouteComponent,
+  loader: async () => {
+    const transactions = await getRecentTransactions()
+  }
 })
 
 function RouteComponent() {
