@@ -155,6 +155,24 @@ export function AllTransactions({
                   <TableCell>
                     £{numeral(transaction.amount).format('0,0[.]00')}
                   </TableCell>
+                  <TableCell className='text-right'>
+                    <Button asChild>
+                      <Link
+                        onClick={() => {
+                          router.clearCache({
+                            filter: (router) => router.pathname !== `/dashboard/transactions/${transaction.id}`
+                          })
+                        }}
+                        to='/dashboard/transactions/$transactionid'
+                        params={{ transactionid: transaction.id.toString() }}               
+                      >
+                        <LucidePencil 
+                        size='icon' 
+                        aria-label='Edit Transactions'
+                      />
+                      </Link>
+                    </Button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
