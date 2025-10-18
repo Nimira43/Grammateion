@@ -14,7 +14,7 @@ export const getAnnualCashflow = createServerFn({
 })
   .middleware([authMiddleware])
   .validator((data: z.infer<typeof schema>) =>schema.parse(data))
-  .handler(async () => {
+  .handler(async ({context}) => {
     const cashflow = await db.select({
       month: sql<string>`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`,
       totalIncome: sql<string>`SUM(CASE WHEN ${categoriesTable.type} = 'income' THEN ${transactionsTable.amount} ELSE 0 END)`,
@@ -23,5 +23,9 @@ export const getAnnualCashflow = createServerFn({
     .from(transactionsTable)
     .leftJoin(
       categoriesTable, 
-      eq(transactionsTable.categoryId, categoriesTable.id))
+      eq(transactionsTable.categoryId, categoriesTable.id)
+    )
+    .where(eq(transactionsTable.userId, context.userId))
+    .groupBy(sql`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`)
+    
   })
