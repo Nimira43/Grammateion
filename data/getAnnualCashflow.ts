@@ -15,17 +15,25 @@ export const getAnnualCashflow = createServerFn({
   .middleware([authMiddleware])
   .validator((data: z.infer<typeof schema>) =>schema.parse(data))
   .handler(async ({context, data}) => {
-    const cashflow = await db.select({
-      month: sql<string>`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`,
-      totalIncome: sql<string>`SUM(CASE WHEN ${categoriesTable.type} = 'income' THEN ${transactionsTable.amount} ELSE 0 END)`,
-      totalExpenses: sql<string>`SUM(CASE WHEN ${categoriesTable.type} = 'expense' THEN ${transactionsTable.amount} ELSE 0 END)` 
-    })
-    .from(transactionsTable)
-    .leftJoin(
-      categoriesTable, 
-      eq(transactionsTable.categoryId, categoriesTable.id)
-    )
-    .where(and(eq(transactionsTable.userId, context.userId), sql`EXTRACT(YEAR FROM ${transactionsTable.transactionDate}) = ${data.year}`))
-    .groupBy(sql`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`)
-    .orderBy(sql`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`)
-  })
+    const cashflow = await db
+      .select({
+        month: sql<string>`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`,
+        totalIncome: sql<string>`SUM(CASE WHEN ${categoriesTable.type} = 'income' THEN ${transactionsTable.amount} ELSE 0 END)`,
+        totalExpenses: sql<string>`SUM(CASE WHEN ${categoriesTable.type} = 'expense' THEN ${transactionsTable.amount} ELSE 0 END)` 
+      })
+      .from(transactionsTable)
+      .leftJoin(
+        categoriesTable, 
+        eq(transactionsTable.categoryId, categoriesTable.id)
+      )
+      .where(
+        and(
+          eq(transactionsTable.userId, context.userId), 
+          sql`EXTRACT(YEAR FROM ${transactionsTable.transactionDate}) = ${data.year}`
+        )
+      )
+      .groupBy(sql`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`)
+      .orderBy(sql`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`)
+
+    return cashflow
+})
