@@ -2,7 +2,7 @@ import authMiddleware from '@/authMiddleware'
 import { db } from '@/db'
 import { categoriesTable, transactionsTable } from '@/db/schema'
 import { createServerFn } from '@tanstack/start'
-import { eq, sql } from 'drizzle-orm'
+import { and, eq, sql } from 'drizzle-orm'
 import { z } from 'zod'
 
 const schema = z.object({
@@ -14,7 +14,7 @@ export const getAnnualCashflow = createServerFn({
 })
   .middleware([authMiddleware])
   .validator((data: z.infer<typeof schema>) =>schema.parse(data))
-  .handler(async ({context}) => {
+  .handler(async ({context, data}) => {
     const cashflow = await db.select({
       month: sql<string>`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`,
       totalIncome: sql<string>`SUM(CASE WHEN ${categoriesTable.type} = 'income' THEN ${transactionsTable.amount} ELSE 0 END)`,
@@ -25,7 +25,7 @@ export const getAnnualCashflow = createServerFn({
       categoriesTable, 
       eq(transactionsTable.categoryId, categoriesTable.id)
     )
-    .where(eq(transactionsTable.userId, context.userId))
+    .where(and(eq(transactionsTable.userId, context.userId), sql`EXTRACT(YEAR FROM ${transactionsTable.transactionDate}) = ${data.year}`))
     .groupBy(sql`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`)
-    
+    .orderBy(sql`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`)
   })
