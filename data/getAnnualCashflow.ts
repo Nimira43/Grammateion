@@ -35,5 +35,10 @@ export const getAnnualCashflow = createServerFn({
       .groupBy(sql`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`)
       .orderBy(sql`EXTRACT(MONTH FROM ${transactionsTable.transactionDate})`)
 
+    const annualCashflow: {
+      month: number
+      income: number
+    }[] = []
+
     return cashflow
 })
