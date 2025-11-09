@@ -16,6 +16,7 @@ export function Cashflow({
           <span>Cashflow</span>
           <div>
             <Select 
+              defaultValue={}
               onValueChange={(value) => {
                 navigate({
                   to: '/dashboard',

@@ -38,6 +38,7 @@ export const Route = createFileRoute('/_authed/dashboard/')({
 
     console.log(cashflow)
     return {
+      cfyear: deps.cfyear,
       cashflow,
       transactions,
       yearsRange
