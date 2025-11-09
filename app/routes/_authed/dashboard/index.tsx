@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { RecentTransactions } from './-recent-transactions'
 import { getRecentTransactions } from '@/data/getRecentTransactions'
 import { getAnnualCashflow } from '@/data/getAnnualCashflow'
+import { getTransactionYearsRange } from '@/data/getTransactionYearsRange'
 
 export const Route = createFileRoute('/_authed/dashboard/')({
   component: RouteComponent,
@@ -10,10 +11,12 @@ export const Route = createFileRoute('/_authed/dashboard/')({
       getRecentTransactions(),  
       getAnnualCashflow({
         data: {
-          year: 2025
-        }
-      })
+          year: 2025,
+        },
+      }),
+      getTransactionYearsRange()
     ])
+
     console.log(cashflow)
     return {
       cashflow,
