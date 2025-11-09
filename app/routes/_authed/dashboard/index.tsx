@@ -7,7 +7,12 @@ import { Cashflow } from './-cashflow'
 import { z } from 'zod'
 
 const searchSchema = z.object({
-  cfyear: z.number()
+  cfyear: z
+    .number()
+    .min(today.getFullYear() - 100)
+    .max(today.getFullYear())
+    .catch(today.getFullYear())
+    .optional()
 })
 
 export const Route = createFileRoute('/_authed/dashboard/')({
