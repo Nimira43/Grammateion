@@ -41,7 +41,9 @@ export const getAnnualCashflow = createServerFn({
       expense: number
     }[] = []
 
-    for 
+    for (let i = 0; i < 12; i ++) {
+      
+    }
 
     return cashflow
 })
