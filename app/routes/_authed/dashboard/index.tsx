@@ -20,8 +20,8 @@ const searchSchema = z.object({
 export const Route = createFileRoute('/_authed/dashboard/')({
   validateSearch: searchSchema,
   component: RouteComponent,
-  loaderDeps: ({search}) => ({cfyear: search.cfyear}),
-  loader: async () => {
+  loaderDeps: ({ search }) => ({ cfyear: search.cfyear }),
+  loader: async ({deps}) => {
     const [
       transactions, 
       cashflow,
@@ -30,7 +30,7 @@ export const Route = createFileRoute('/_authed/dashboard/')({
       getRecentTransactions(),  
       getAnnualCashflow({
         data: {
-          year: 2025,
+          year: deps.cfyear ?? today.getFullYear(),
         },
       }),
       getTransactionYearsRange()
