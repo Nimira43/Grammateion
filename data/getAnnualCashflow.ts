@@ -41,8 +41,13 @@ export const getAnnualCashflow = createServerFn({
       expense: number
     }[] = []
 
-    for (let i = 0; i < 12; i ++) {
-      const monthlyCashflow = cashflow.find((cf) => Number(cf.month) === i + 1)
+    for (let i = 1; i <= 12; i ++) {
+      const monthlyCashflow = cashflow.find((cf) => Number(cf.month) === i)
+      annualCashflow.push({
+        month: i,
+        income: monthlyCashflow?.totalIncome ?? 0,
+        expense: monthlyCashflow?.totalExpenses ?? 0,
+      })
     }
 
     return cashflow
