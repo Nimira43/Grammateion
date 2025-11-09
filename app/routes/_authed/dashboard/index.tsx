@@ -6,6 +6,8 @@ import { getTransactionYearsRange } from '@/data/getTransactionYearsRange'
 import { Cashflow } from './-cashflow'
 import { z } from 'zod'
 
+const today = new Date()
+
 const searchSchema = z.object({
   cfyear: z
     .number()
