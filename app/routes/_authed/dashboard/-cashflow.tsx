@@ -4,7 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 export function Cashflow({
   yearsRange
 }: {
-  yearsRange: Number[]
+  yearsRange: number[]
 }) {
   return (
     <Card>
@@ -18,9 +18,10 @@ export function Cashflow({
             <SelectContent>
               {yearsRange.map(year => 
                 <SelectItem
-                
+                  key={year}
+                  value={year.toString()}
                 >
-                  
+                  {year}
                 </SelectItem>
               )}
             </SelectContent>
