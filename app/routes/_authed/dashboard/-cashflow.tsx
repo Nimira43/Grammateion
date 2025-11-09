@@ -7,7 +7,7 @@ export function Cashflow({
   year
 }: {
   yearsRange: number[],
-  year
+  year: number
 }) {
   const navigate = useNavigate()
   
@@ -18,7 +18,7 @@ export function Cashflow({
           <span>Cashflow</span>
           <div>
             <Select 
-              defaultValue={year}
+              defaultValue={year.toString()}
               onValueChange={(value) => {
                 navigate({
                   to: '/dashboard',
