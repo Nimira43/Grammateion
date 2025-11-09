@@ -38,7 +38,10 @@ export const getAnnualCashflow = createServerFn({
     const annualCashflow: {
       month: number
       income: number
+      expense: number
     }[] = []
+
+    for 
 
     return cashflow
 })
