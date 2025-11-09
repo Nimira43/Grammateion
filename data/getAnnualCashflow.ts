@@ -50,5 +50,5 @@ export const getAnnualCashflow = createServerFn({
       })
     }
 
-    return cashflow
+    return annualCashflow
 })
