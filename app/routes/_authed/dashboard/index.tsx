@@ -18,8 +18,9 @@ const searchSchema = z.object({
 })
 
 export const Route = createFileRoute('/_authed/dashboard/')({
-  validateSearch:
+  validateSearch: searchSchema,
   component: RouteComponent,
+  
   loader: async () => {
     const [
       transactions, 
