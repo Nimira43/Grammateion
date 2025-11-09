@@ -12,7 +12,11 @@ export function Cashflow({
         <CardTitle className='flex justify-between'>
           <span>Cashflow</span>
           <div>
-            <Select>
+            <Select 
+              onValueChange={(value) => {
+
+              }}
+            >
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>
