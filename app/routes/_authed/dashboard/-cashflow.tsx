@@ -3,9 +3,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useNavigate } from '@tanstack/react-router'
 
 export function Cashflow({
-  yearsRange
+  yearsRange,
+  year
 }: {
-  yearsRange: number[]
+  yearsRange: number[],
+  year
 }) {
   const navigate = useNavigate()
   
@@ -16,7 +18,7 @@ export function Cashflow({
           <span>Cashflow</span>
           <div>
             <Select 
-              defaultValue={}
+              defaultValue={year}
               onValueChange={(value) => {
                 navigate({
                   to: '/dashboard',

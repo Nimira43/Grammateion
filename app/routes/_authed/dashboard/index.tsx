@@ -38,7 +38,7 @@ export const Route = createFileRoute('/_authed/dashboard/')({
 
     console.log(cashflow)
     return {
-      cfyear: deps.cfyear,
+      cfyear: deps.cfyear ?? today.getFullYear(),
       cashflow,
       transactions,
       yearsRange
@@ -47,11 +47,12 @@ export const Route = createFileRoute('/_authed/dashboard/')({
 })
 
 function RouteComponent() {
-  const {transactions, cashflow, yearsRange} = Route.useLoaderData()
+  const {transactions, cashflow, yearsRange, cfyear} = Route.useLoaderData()
   console.log({cashflow})
   return <div className='max-w-screen-xl mx-auto py-5'>
     <h1 className='text-4xl font-medium pb-5'>Dashboard</h1>
     <Cashflow 
+      year={cfyear}
       yearsRange={yearsRange}
     />
     <RecentTransactions 
