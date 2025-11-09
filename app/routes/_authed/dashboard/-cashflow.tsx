@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
-import { Select, SelectContent, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 export function Cashflow({
   yearsRange
@@ -16,7 +16,13 @@ export function Cashflow({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              
+              {yearsRange.map(year => 
+                <SelectItem
+                
+                >
+                  
+                </SelectItem>
+              )}
             </SelectContent>
           </Select>
         </CardTitle>
