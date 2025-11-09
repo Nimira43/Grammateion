@@ -20,7 +20,7 @@ const searchSchema = z.object({
 export const Route = createFileRoute('/_authed/dashboard/')({
   validateSearch: searchSchema,
   component: RouteComponent,
-  
+  loaderDeps: ({search}) => ({cfyear: search.cfyear}),
   loader: async () => {
     const [
       transactions, 
