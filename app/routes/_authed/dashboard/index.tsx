@@ -4,8 +4,14 @@ import { getRecentTransactions } from '@/data/getRecentTransactions'
 import { getAnnualCashflow } from '@/data/getAnnualCashflow'
 import { getTransactionYearsRange } from '@/data/getTransactionYearsRange'
 import { Cashflow } from './-cashflow'
+import { z } from 'zod'
+
+const searchSchema = z.object({
+  cfyear: z.number()
+})
 
 export const Route = createFileRoute('/_authed/dashboard/')({
+  validateSearch:
   component: RouteComponent,
   loader: async () => {
     const [
