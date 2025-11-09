@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
-import { Select, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Select, SelectContent, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 export function Cashflow() {
   return (
@@ -11,6 +11,9 @@ export function Cashflow() {
             <SelectTrigger>
               <SelectValue />
             </SelectTrigger>
+            <SelectContent>
+              
+            </SelectContent>
           </Select>
         </CardTitle>
       </CardHeader>
