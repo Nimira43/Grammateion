@@ -7,25 +7,27 @@ export function Cashflow({
   yearsRange: number[]
 }) {
   return (
-    <Card>
+    <Card className='mb-5'>
       <CardHeader>
         <CardTitle className='flex justify-between'>
           <span>Cashflow</span>
-          <Select>
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {yearsRange.map(year => 
-                <SelectItem
-                  key={year}
-                  value={year.toString()}
-                >
-                  {year}
-                </SelectItem>
-              )}
-            </SelectContent>
-          </Select>
+          <div>
+            <Select>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {yearsRange.map(year => 
+                  <SelectItem
+                    key={year}
+                    value={year.toString()}
+                  >
+                    {year}
+                  </SelectItem>
+                )}
+              </SelectContent>
+            </Select>
+          </div>
         </CardTitle>
       </CardHeader>
     </Card>
