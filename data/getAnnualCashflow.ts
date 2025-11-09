@@ -42,7 +42,7 @@ export const getAnnualCashflow = createServerFn({
     }[] = []
 
     for (let i = 0; i < 12; i ++) {
-      const monthlyCashflow = cashflow.find((cf) => cf.month === i + 1)
+      const monthlyCashflow = cashflow.find((cf) => Number(cf.month) === i + 1)
     }
 
     return cashflow
