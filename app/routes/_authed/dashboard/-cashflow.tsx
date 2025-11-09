@@ -23,7 +23,7 @@ export function Cashflow({
                 navigate({
                   to: '/dashboard',
                   search: {
-                    cfyear: value
+                    cfyear: Number(value)
                   }
                 })
               }}
