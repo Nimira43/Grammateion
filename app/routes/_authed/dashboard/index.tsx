@@ -7,7 +7,11 @@ import { getTransactionYearsRange } from '@/data/getTransactionYearsRange'
 export const Route = createFileRoute('/_authed/dashboard/')({
   component: RouteComponent,
   loader: async () => {
-    const [transactions, cashflow] = await Promise.all([
+    const [
+      transactions, 
+      cashflow,
+      yearsRange
+    ] = await Promise.all([
       getRecentTransactions(),  
       getAnnualCashflow({
         data: {
@@ -21,6 +25,7 @@ export const Route = createFileRoute('/_authed/dashboard/')({
     return {
       cashflow,
       transactions,
+      yearsRange
     }
   }
 })
