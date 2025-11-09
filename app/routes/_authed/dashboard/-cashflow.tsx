@@ -17,7 +17,12 @@ export function Cashflow({
           <div>
             <Select 
               onValueChange={(value) => {
-                
+                navigate({
+                  to: '/dashboard',
+                  search: {
+                    cfyear: value
+                  }
+                })
               }}
             >
               <SelectTrigger>
