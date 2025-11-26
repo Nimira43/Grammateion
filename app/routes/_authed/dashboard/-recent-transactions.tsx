@@ -79,8 +79,8 @@ export function RecentTransactions({
                   <TableCell className='uppercase'>
                     <Badge className={
                       transaction.transactionType === 'income'
-                      ? 'bg-green-400'
-                      : 'bg-red-400'
+                      ? 'bg-green-600'
+                      : 'bg-red-600'
                     }>
                       {transaction.transactionType}
                     </Badge>
