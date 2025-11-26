@@ -79,3 +79,7 @@ body {
   font-family: 'Great Vibes', serif;
   color: var(--logo);
 }
+
+.hover-transition {
+  transition: all 0.5s ease-in-out;
+}
