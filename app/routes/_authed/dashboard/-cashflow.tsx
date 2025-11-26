@@ -4,10 +4,16 @@ import { useNavigate } from '@tanstack/react-router'
 
 export function Cashflow({
   yearsRange,
-  year
+  year,
+  annualCashflow
 }: {
   yearsRange: number[],
-  year: number
+  year: number,
+  annualCashflow: {
+    month: number
+    income: number
+    expenses: number
+  }[]
 }) {
   const navigate = useNavigate()
   
@@ -46,7 +52,7 @@ export function Cashflow({
         </CardTitle>
       </CardHeader>
       <CardContent>
-        
+
       </CardContent>
     </Card>
   )
