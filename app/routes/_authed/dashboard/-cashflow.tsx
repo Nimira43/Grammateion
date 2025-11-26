@@ -4,7 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useNavigate } from '@tanstack/react-router'
 import { format } from 'date-fns'
 import numeral from 'numeral'
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, CartesianGrid, Legend, XAxis, YAxis } from 'recharts'
 
 export function Cashflow({
   yearsRange,
@@ -96,6 +96,10 @@ export function Cashflow({
                   )
                 }
               }
+            />
+            <Legend
+              align='right'
+              verticalAlign='top'
             />
             <Bar
               dataKey='income'
