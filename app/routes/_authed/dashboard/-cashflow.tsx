@@ -2,7 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChartContainer } from '@/components/ui/chart'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useNavigate } from '@tanstack/react-router'
-import { Bar, BarChart } from 'recharts'
+import { format } from 'date-fns'
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
 
 export function Cashflow({
   yearsRange,
@@ -62,7 +63,7 @@ export function Cashflow({
             },
             expenses: {
               label:'Expenses',
-              color: '#ff4500'
+              color: '#b91c1c'
             },
           }}
           className='w-full h-[300px]'
@@ -70,6 +71,23 @@ export function Cashflow({
           <BarChart 
             data={annualCashflow}  
           >
+            <CartesianGrid vertical={false} />
+            <YAxis />
+            <XAxis
+              dataKey='month'
+              tickFormatter={
+                (value) => {
+                  return format(
+                    new Date(
+                      year,
+                      value - 1,
+                      1
+                    ),
+                    "MMM"
+                  )
+                }
+              }
+            />
             <Bar
               dataKey='income'
               fill='var(--color-income)'

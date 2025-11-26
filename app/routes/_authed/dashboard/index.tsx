@@ -54,6 +54,7 @@ function RouteComponent() {
     <Cashflow 
       year={cfyear}
       yearsRange={yearsRange}
+      annualCashflow={cashflow}
     />
     <RecentTransactions 
       transactions={transactions}
