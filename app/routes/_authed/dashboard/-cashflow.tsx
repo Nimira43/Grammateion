@@ -76,9 +76,7 @@ export function Cashflow({
             <YAxis
               tickFormatter={
                 (value) => {
-                  return `
-                    £${numeral(value).format('0,0')}
-                  `
+                  return `£${numeral(value).format('0,0')}`
                 }
               }
             />
@@ -92,7 +90,7 @@ export function Cashflow({
                       value - 1,
                       1
                     ),
-                    "MMM"
+                    'MMM'
                   )
                 }
               }
@@ -100,6 +98,14 @@ export function Cashflow({
             <ChartTooltip
               content={
                 <ChartTooltipContent
+                  formatter={(value, name) => (
+                    <div className='flex justify-between gap-2 w-full'>
+                      <span className='capitalize text-muted-foreground'>{name}</span>
+                      <span className='capitalize font-mono font-medium tabular-nums text-foreground'>
+                        £{numeral(value).format('0,0')}
+                      </span>
+                    </div>
+                  )}
                   labelFormatter={
                     (_, payload) => {
                       return (
@@ -110,7 +116,7 @@ export function Cashflow({
                               payload[0]?.payload?.month - 1,
                               1
                             ),
-                            'MMM'
+                            'MMMM'
                           )}
                         </div>                        
                       )
