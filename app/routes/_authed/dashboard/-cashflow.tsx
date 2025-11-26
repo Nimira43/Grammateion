@@ -128,6 +128,7 @@ export function Cashflow({
             <Legend
               align='right'
               verticalAlign='top'
+              wrapperStyle={{ textTransform: 'capitalize' }}
             />
             <Bar
               dataKey='income'
