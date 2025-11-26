@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChartContainer } from '@/components/ui/chart'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useNavigate } from '@tanstack/react-router'
-import { BarChart } from 'recharts'
+import { Bar, BarChart } from 'recharts'
 
 export function Cashflow({
   yearsRange,
@@ -70,7 +70,16 @@ export function Cashflow({
           <BarChart 
             data={annualCashflow}  
           >
-
+            <Bar
+              dataKey='income'
+              fill='var(--color-income)'
+              radius={4}
+            />
+            <Bar
+              dataKey='expenses'
+              fill='var(--color-expenses)'
+              radius={4}
+            />
           </BarChart>
         </ChartContainer>
       </CardContent>
