@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { ChartContainer } from '@/components/ui/chart'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useNavigate } from '@tanstack/react-router'
 
@@ -52,7 +53,22 @@ export function Cashflow({
         </CardTitle>
       </CardHeader>
       <CardContent>
+        <ChartContainer
+          config={{
+            income: {
+              label:'Income',
+              color: '#16a34a'
+            },
+            expenses: {
+              label:'Expenses',
+              color: '#ff4500'
+            },
+          }
 
+          }
+        >
+
+        </ChartContainer>
       </CardContent>
     </Card>
   )
