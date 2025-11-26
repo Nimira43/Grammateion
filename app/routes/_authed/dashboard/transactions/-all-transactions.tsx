@@ -86,7 +86,7 @@ export function AllTransactions({
                   month: selectedMonth,
                   year: selectedYear,
                 }}
-                className='uppercase'
+                className='uppercase hover-transition'
               >
                 Submit
               </Link>      
@@ -99,7 +99,7 @@ export function AllTransactions({
         <Button asChild>
           <Link 
             to='/dashboard/transactions/new'
-            className='uppercase'
+            className='uppercase hover-transition'
           >
               New Transaction
           </Link>
@@ -155,7 +155,10 @@ export function AllTransactions({
                     £{numeral(transaction.amount).format('0,0[.]00')}
                   </TableCell>
                   <TableCell className='text-right'>
-                    <Button asChild>
+                    <Button 
+                      className='hover-transition'
+                      asChild
+                    >
                       <Link
                         onClick={() => {
                           router.clearCache({
@@ -166,9 +169,9 @@ export function AllTransactions({
                         params={{ transactionid: transaction.id.toString() }}               
                       >
                         <LucidePencil 
-                        size='icon' 
-                        aria-label='Edit Transactions'
-                      />
+                          size='icon' 
+                          aria-label='Edit Transactions'
+                        />
                       </Link>
                     </Button>
                   </TableCell>

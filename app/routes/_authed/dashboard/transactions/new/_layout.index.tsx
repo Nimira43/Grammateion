@@ -38,7 +38,7 @@ function RouteComponent() {
     toast({
       title: 'Success',
       description: 'Transaction created.',
-      className: 'bg-green-500 text-light',
+      className: 'bg-green-600 text-light',
     })
     navigate({
       to: '/dashboard/transactions',

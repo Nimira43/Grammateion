@@ -27,7 +27,7 @@ export function RecentTransactions({
             <Button 
               asChild
               variant='outline'
-              className='uppercase'
+              className='uppercase hover-transition'
             >
               <Link to='/dashboard/transactions'>
                 View All
@@ -35,7 +35,7 @@ export function RecentTransactions({
             </Button>
             <Button 
               asChild
-              className='uppercase'
+              className='uppercase hover-transition'
             >
               <Link to='/dashboard/transactions/new'>
                 Create New

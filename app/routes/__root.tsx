@@ -67,9 +67,9 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
           <Meta />
         </head>
         <body>
-          <nav className='bg-dark p-4 h-20 text-main flex items-center justify-between'>
+          <nav className='bg-dark p-4 h-20 text-light flex items-center justify-between'>
             <Link to='/' className='flex gap-1 items-center text-2xl'>
-              <BookOpenCheck className='text-main '/>
+              <BookOpenCheck />
               <h1 className='logo pl-2'>Grammateion</h1>
             </Link>
             <div>

@@ -64,7 +64,7 @@ function RouteComponent() {
     toast({
       title: 'Success',
       description: 'Transaction updated.',
-      className: 'bg-green-500 text-light',
+      className: 'bg-green-600 text-light',
     })
     navigate({
       to: '/dashboard/transactions',
@@ -85,7 +85,7 @@ function RouteComponent() {
     toast({
       title: 'Success',
       description: 'Transaction deleted.',
-      className: 'bg-green-500 text-light',
+      className: 'bg-green-600 text-light',
     })
 
     setDeleting(false)
@@ -124,6 +124,7 @@ function RouteComponent() {
               <AlertDialogFooter>
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
                 <Button
+                  className='hover-transition'
                   disabled={deleting}
                   onClick={handleDeleteConfirm}
                 >

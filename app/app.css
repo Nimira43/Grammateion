@@ -77,7 +77,7 @@ body {
 }
 .logo {
   font-family: 'Great Vibes', serif;
-  color: var(--logo);
+  /* color: var(--logo); */
 }
 
 .hover-transition {
