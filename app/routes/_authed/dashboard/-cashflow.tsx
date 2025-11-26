@@ -3,6 +3,7 @@ import { ChartContainer } from '@/components/ui/chart'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useNavigate } from '@tanstack/react-router'
 import { format } from 'date-fns'
+import numeral from 'numeral'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
 
 export function Cashflow({
@@ -72,7 +73,15 @@ export function Cashflow({
             data={annualCashflow}  
           >
             <CartesianGrid vertical={false} />
-            <YAxis />
+            <YAxis
+              tickFormatter={
+                (value) => {
+                  return `
+                    £${numeral(value).format('0,0')}
+                  `
+                }
+              }
+            />
             <XAxis
               dataKey='month'
               tickFormatter={
