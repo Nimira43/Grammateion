@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ChartContainer } from '@/components/ui/chart'
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useNavigate } from '@tanstack/react-router'
 import { format } from 'date-fns'
@@ -95,6 +95,28 @@ export function Cashflow({
                     "MMM"
                   )
                 }
+              }
+            />
+            <ChartTooltip
+              content={
+                <ChartTooltipContent
+                  labelFormatter={
+                    (_, payload) => {
+                      return (
+                        <div>
+                          {format(
+                            new Date(
+                              year,
+                              payload[0]?.payload?.month - 1,
+                              1
+                            ),
+                            'MMM'
+                          )}
+                        </div>                        
+                      )
+                    }
+                  } 
+                />
               }
             />
             <Legend
