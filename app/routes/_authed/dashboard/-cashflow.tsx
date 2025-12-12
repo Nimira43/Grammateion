@@ -64,7 +64,7 @@ export function Cashflow({
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className='grid grid-cols[1fr_250px]'>
+      <CardContent className='grid grid-cols-[1fr_250px]'>
         <ChartContainer
           config={{
             income: {
@@ -152,7 +152,16 @@ export function Cashflow({
           </BarChart>
         </ChartContainer>
         <div className='border-l px-4 flex flex-col gap-4 justify-center'>
-          
+          <div>
+            <span className='text-muted-foreground font-medium text-sm'>Income</span>
+            <h2 className='text-3xl'>£{numeral(totalAnnualIncome).format('0,0[.]00')}</h2>
+          </div>
+          <div className='border-t' />
+          <div>
+            <span className='text-muted-foreground font-medium text-sm'>Expenses</span>
+            <h2 className='text-3xl'>£{numeral(totalAnnualExpenses).format('0,0[.]00')}</h2>
+          </div>
+          <div className='border-t' />
         </div>
       </CardContent>
     </Card>
