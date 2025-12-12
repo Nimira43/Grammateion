@@ -64,7 +64,7 @@ function RouteComponent() {
     toast({
       title: 'Success',
       description: 'Transaction updated.',
-      className: 'bg-green-600 text-light',
+      className: 'bg-positive text-light',
     })
     navigate({
       to: '/dashboard/transactions',
@@ -85,7 +85,7 @@ function RouteComponent() {
     toast({
       title: 'Success',
       description: 'Transaction deleted.',
-      className: 'bg-green-600 text-light',
+      className: 'bg-positive text-light',
     })
 
     setDeleting(false)
