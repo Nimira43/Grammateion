@@ -142,8 +142,8 @@ export function AllTransactions({
                   <TableCell className='uppercase'>
                     <Badge className={
                       transaction.transactionType === 'income'
-                      ? 'bg-green-600'
-                      : 'bg-red-700'
+                      ? 'bg-positive'
+                      : 'bg-negative'
                     }>
                       {transaction.transactionType}
                     </Badge>
@@ -168,10 +168,7 @@ export function AllTransactions({
                         to='/dashboard/transactions/$transactionid'
                         params={{ transactionid: transaction.id.toString() }}               
                       >
-                        <LucidePencil 
-                          size='icon' 
-                          aria-label='Edit Transactions'
-                        />
+                        <LucidePencil size='icon' />
                       </Link>
                     </Button>
                   </TableCell>

@@ -169,8 +169,8 @@ export function Cashflow({
               className={cn(
                 'text-3xl font-semibold',
                 balance >= 0
-                  ? 'text-green-600'
-                  : 'text-red-700'
+                  ? 'text-positive'
+                  : 'text-negative'
               )}
             >
               £{numeral(balance).format('0,0[.]00')}
