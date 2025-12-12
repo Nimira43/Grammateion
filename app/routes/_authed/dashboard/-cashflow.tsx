@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { cn } from '@/lib/utils'
 import { useNavigate } from '@tanstack/react-router'
 import { format } from 'date-fns'
 import numeral from 'numeral'
@@ -164,7 +165,16 @@ export function Cashflow({
           <div className='border-t' />
           <div>
             <span className='text-muted-foreground font-medium text-sm'>Balance</span>
-            <h2 className='text-3xl'>£{numeral(balance).format('0,0[.]00')}</h2>
+            <h2
+              className={cn(
+                'text-3xl font-semibold',
+                balance >= 0
+                  ? 'text-green-600'
+                  : 'text-red-700'
+              )}
+            >
+              £{numeral(balance).format('0,0[.]00')}
+            </h2>
           </div>
         </div>
       </CardContent>
