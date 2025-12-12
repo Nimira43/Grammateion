@@ -28,7 +28,6 @@ export function Cashflow({
   }, 0)
   
   const balance = totalAnnualIncome - totalAnnualExpenses
-
   const navigate = useNavigate()
   
   return (
@@ -65,7 +64,7 @@ export function Cashflow({
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className='grid grid-cols[1fr_250px]'>
         <ChartContainer
           config={{
             income: {
@@ -152,6 +151,9 @@ export function Cashflow({
             />
           </BarChart>
         </ChartContainer>
+        <div className='border-l px-4 flex flex-col gap-4 justify-center'>
+          
+        </div>
       </CardContent>
     </Card>
   )
