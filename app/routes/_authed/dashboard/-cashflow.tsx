@@ -19,6 +19,10 @@ export function Cashflow({
     expenses: number
   }[]
 }) {
+  const totalAnnualIncome = annualCashflow.reduce((prevResult: number, { income }) => { 
+    return prevResult + income
+  }, 0)
+  
   const navigate = useNavigate()
   
   return (
