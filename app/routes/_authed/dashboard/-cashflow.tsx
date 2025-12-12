@@ -27,6 +27,8 @@ export function Cashflow({
     return prevResult + expenses
   }, 0)
   
+  const balance = totalAnnualIncome - totalAnnualExpenses
+
   const navigate = useNavigate()
   
   return (
