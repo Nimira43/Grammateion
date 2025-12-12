@@ -23,6 +23,10 @@ export function Cashflow({
     return prevResult + income
   }, 0)
   
+  const totalAnnualExpenses = annualCashflow.reduce((prevResult: number, { expenses }) => { 
+    return prevResult + expenses
+  }, 0)
+  
   const navigate = useNavigate()
   
   return (
