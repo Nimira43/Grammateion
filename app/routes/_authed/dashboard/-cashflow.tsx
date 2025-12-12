@@ -151,7 +151,7 @@ export function Cashflow({
             />
           </BarChart>
         </ChartContainer>
-        <div className='border-l px-4 flex flex-col gap-4 justify-center'>
+        <div className='border-l px-4 flex flex-col gap-4 justify-center text-center'>
           <div>
             <span className='text-muted-foreground font-medium text-sm'>Income</span>
             <h2 className='text-3xl'>£{numeral(totalAnnualIncome).format('0,0[.]00')}</h2>
@@ -162,6 +162,10 @@ export function Cashflow({
             <h2 className='text-3xl'>£{numeral(totalAnnualExpenses).format('0,0[.]00')}</h2>
           </div>
           <div className='border-t' />
+          <div>
+            <span className='text-muted-foreground font-medium text-sm'>Balance</span>
+            <h2 className='text-3xl'>£{numeral(balance).format('0,0[.]00')}</h2>
+          </div>
         </div>
       </CardContent>
     </Card>
