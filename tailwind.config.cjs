@@ -12,6 +12,8 @@ module.exports = {
         'grey-light': '#ccc',
         'grey-medium': '#999',
         'grey-dark': '#333',
+        'income': '#16a34a',
+        'expense': '#b91c1c',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

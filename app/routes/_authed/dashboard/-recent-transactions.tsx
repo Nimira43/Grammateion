@@ -80,7 +80,7 @@ export function RecentTransactions({
                     <Badge className={
                       transaction.transactionType === 'income'
                       ? 'bg-green-600'
-                      : 'bg-red-600'
+                      : 'bg-red-700'
                     }>
                       {transaction.transactionType}
                     </Badge>
