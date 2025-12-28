@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import cover from '@/assets/home-page.jpg'
 import { BookOpenCheck } from 'lucide-react'
-import { SignedIn, SignedOut } from '@clerk/tanstack-start'
+import { SignedIn, SignedOut, SignInButton } from '@clerk/tanstack-start'
 import { Button } from '@/components/ui/button'
 
 export const Route = createFileRoute('/')({
@@ -32,7 +32,17 @@ function RouteComponent() {
             </Link>
           </Button>
         </SignedIn>
-        
+        <SignedOut>
+          <div className='flex gap-2 items-center justify-center'>
+            <Button
+              asChild
+              variant='dark'
+            >
+              <SignInButton />
+            </Button>
+          </div>
+          
+        </SignedOut>
       </div>
     </div>
   )
