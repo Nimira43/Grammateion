@@ -11,7 +11,10 @@ function RouteComponent() {
       <img
         src={cover}
         alt=''
+        className='absolute top-0 left-0 object-cover object-center h-full w-full'
       />
+      <div className="absolute inset-0 bg-black/70" />
+      
     </div>
   )
 }
