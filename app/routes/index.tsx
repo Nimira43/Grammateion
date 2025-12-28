@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import cover from '@/assets/home-page.jpg'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -6,8 +7,11 @@ export const Route = createFileRoute('/')({
 
 function RouteComponent() {
   return (
-    <div>
-      Home Page
+    <div className='min-h-[400px] h-[calc(100vh-80px)] flex items-center justify-center relative'>
+      <img
+        src={cover}
+        alt=''
+      />
     </div>
   )
 }
