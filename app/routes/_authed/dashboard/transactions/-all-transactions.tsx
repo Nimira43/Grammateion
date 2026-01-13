@@ -168,7 +168,7 @@ export function AllTransactions({
                         to='/dashboard/transactions/$transactionid'
                         params={{ transactionid: transaction.id.toString() }}               
                       >
-                        <LucidePencil size='icon' />
+                        <LucidePencil />
                       </Link>
                     </Button>
                   </TableCell>

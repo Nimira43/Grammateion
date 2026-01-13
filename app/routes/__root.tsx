@@ -17,8 +17,13 @@ import { getSignedInUserId } from '@/data/getSignedInUserId'
 import { Toaster } from '@/components/ui/toaster'
 
 export const Route = createRootRoute({
+  pendingMs: 0,
   notFoundComponent() {
-    return <div className='text-3xl text-center py-10 text-dark'>Sorry. Page Not Found.</div>
+    return (
+      <div className='text-3xl text-center py-10 text-dark'>
+        Sorry. Page Not Found.
+      </div>
+    )
   },
   beforeLoad: async () => {
     const userId = await getSignedInUserId()
